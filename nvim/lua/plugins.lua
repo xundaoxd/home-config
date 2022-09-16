@@ -49,6 +49,10 @@ return packer.startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('conf.telescope') end
     }
+    use {
+        'voldikss/vim-floaterm',
+        config = function() require('conf.vim-floaterm') end
+    }
     if packer_bootstrap then
         packer.sync()
     end
