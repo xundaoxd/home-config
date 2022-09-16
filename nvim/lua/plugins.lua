@@ -28,18 +28,16 @@ return packer.startup(function(use)
         config = function() require('conf.nvim-tree') end
     }
     use {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-        },
-        config = function() require('conf.nvim-cmp') end
-    }
-    use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
         config = function() require('bufferline').setup() end
     }
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function() require('conf.nvim-cmp') end
+    }
+    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
     if packer_bootstrap then
         packer.sync()
     end
