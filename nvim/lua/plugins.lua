@@ -46,6 +46,15 @@ return packer.startup(function(use)
     use { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' }
     use { 'saadparwaiz1/cmp_luasnip', requires = { 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets' } }
     use {
+        'hrsh7th/cmp-nvim-lsp',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim'
+        },
+        config = function() require('conf.lsp') end
+    }
+    use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('conf.telescope') end
