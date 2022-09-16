@@ -23,6 +23,7 @@ packer.init({
 
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'mhinz/vim-startify'
     use {
         'kyazdani42/nvim-tree.lua',
         config = function() require('conf.nvim-tree') end
