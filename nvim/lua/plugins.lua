@@ -27,6 +27,14 @@ return packer.startup(function(use)
         'kyazdani42/nvim-tree.lua',
         config = function() require('conf.nvim-tree') end
     }
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+        },
+        config = function() require('conf.nvim-cmp') end
+    }
     if packer_bootstrap then
         packer.sync()
     end
