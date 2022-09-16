@@ -9,6 +9,7 @@ cmp.setup({
         })
     }),
     sources = cmp.config.sources({
+        { name = 'emoji' },
         { name = 'buffer' },
         { name = 'path' },
     }),

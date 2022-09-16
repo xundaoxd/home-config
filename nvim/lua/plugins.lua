@@ -38,6 +38,7 @@ return packer.startup(function(use)
     }
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' }
     if packer_bootstrap then
         packer.sync()
     end
