@@ -35,6 +35,11 @@ return packer.startup(function(use)
         },
         config = function() require('conf.nvim-cmp') end
     }
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        config = function() require('bufferline').setup() end
+    }
     if packer_bootstrap then
         packer.sync()
     end
