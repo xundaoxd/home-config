@@ -9,10 +9,7 @@ require("mason").setup({
     install_root_dir = vim.fn.stdpath('config')..'/pack/mason',
 })
 
-local servers = {'clangd',}
-require("mason-lspconfig").setup({
-    ensure_installed = servers,
-})
+local servers = {'clangd', 'cmake'}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
