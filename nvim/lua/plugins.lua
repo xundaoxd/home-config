@@ -29,6 +29,10 @@ return packer.startup(function(use)
         config = function() require('conf.nvim-tree') end
     }
     use {
+        'nvim-lualine/lualine.nvim',
+        config = function() require('conf.lualine') end
+    }
+    use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
         config = function() require('bufferline').setup() end
