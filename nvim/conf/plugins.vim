@@ -9,13 +9,13 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
 
 Plug 'sbdchd/neoformat'
 let g:neoformat_cuda_clangformat = {
             \ 'exe': 'clang-format',
-            \ 'args': ['-assume-filename=' . expand('%:t')],
+            \ 'args': ['-assume-filename=' . expand('%:t'), '-style=Google'],
             \ 'stdin': 1,
             \ }
 let g:neoformat_enabled_cuda = ['clangformat']
