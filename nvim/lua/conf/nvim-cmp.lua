@@ -5,7 +5,33 @@ local has_words_before = function()
 end
 
 local luasnip = require('luasnip')
-local lspkind = require('lspkind')
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 local cmp = require('cmp')
 cmp.setup({
@@ -33,6 +59,8 @@ cmp.setup({
                 fallback()
             end
         end, { 'i', 's' }),
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
@@ -48,21 +76,22 @@ cmp.setup({
             end
         }),
     }),
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
+    },
     formatting = {
-        format = lspkind.cmp_format({
-            mode = 'symbol',
-            maxwidth = 50,
-            before = function(entry, item)
-                item.menu = ({
-                    nvim_lsp = '[LSP]',
-                    luasnip = '[Snippet]',
-                    buffer = '[Buffer]',
-                    path = '[Path]',
-                    emoji = '[Emoji]',
-                })[entry.source.name]
-                return item
-            end
-        })
+        format = function(entry, item)
+            item.kind = string.format("%s", kind_icons[item.kind])
+            item.menu = ({
+                nvim_lsp = '[LSP]',
+                luasnip = '[Snippet]',
+                buffer = '[Buffer]',
+                path = '[Path]',
+                emoji = '[Emoji]',
+            })[entry.source.name]
+            return item
+        end,
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

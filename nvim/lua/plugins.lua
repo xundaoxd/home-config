@@ -65,10 +65,6 @@ return packer.startup(function(use)
             'nvim-cmp',
             'neovim/nvim-lspconfig',
             'lukas-reineke/lsp-format.nvim',
-            {
-                'onsails/lspkind.nvim',
-                requires = 'kyazdani42/nvim-web-devicons',
-            }
         },
         config = function() require('conf.cmp-nvim-lsp') end
     }
