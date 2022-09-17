@@ -74,7 +74,7 @@ return packer.startup(function(use)
                 requires = 'kyazdani42/nvim-web-devicons',
             }
         },
-        config = function() require('conf.lsp') end
+        config = function() require('conf.cmp-nvim-lsp') end
     }
 
     -- control
