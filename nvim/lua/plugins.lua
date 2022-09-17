@@ -68,6 +68,10 @@ return packer.startup(function(use)
         },
         config = function() require('conf.cmp-nvim-lsp') end
     }
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
+    }
 
     -- control
     use {
@@ -79,6 +83,7 @@ return packer.startup(function(use)
         'voldikss/vim-floaterm',
         config = function() require('conf.vim-floaterm') end
     }
+    use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
         packer.sync()
     end
