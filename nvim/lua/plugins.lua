@@ -69,8 +69,6 @@ return packer.startup(function(use)
             'nvim-cmp',
             'neovim/nvim-lspconfig',
             'lukas-reineke/lsp-format.nvim',
-            'williamboman/mason.nvim',
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
             {
                 'onsails/lspkind.nvim',
                 requires = 'kyazdani42/nvim-web-devicons',
@@ -89,6 +87,7 @@ return packer.startup(function(use)
         'voldikss/vim-floaterm',
         config = function() require('conf.vim-floaterm') end
     }
+    use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
         packer.sync()
     end
