@@ -69,6 +69,7 @@ return packer.startup(function(use)
             'nvim-cmp',
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
             {
                 'onsails/lspkind.nvim',
                 requires = 'kyazdani42/nvim-web-devicons',
