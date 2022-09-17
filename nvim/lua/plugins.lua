@@ -68,6 +68,7 @@ return packer.startup(function(use)
         requires = {
             'nvim-cmp',
             'neovim/nvim-lspconfig',
+            'lukas-reineke/lsp-format.nvim',
             'williamboman/mason.nvim',
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             {
