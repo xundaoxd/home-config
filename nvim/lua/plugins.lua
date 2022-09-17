@@ -23,6 +23,8 @@ packer.init({
 
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
+
+    -- ui
     use 'mhinz/vim-startify'
     use {
         'kyazdani42/nvim-tree.lua',
@@ -37,22 +39,34 @@ return packer.startup(function(use)
         tag = "v2.*",
         config = function() require('bufferline').setup() end
     }
+
+    -- cmp
     use {
         'hrsh7th/nvim-cmp',
         config = function() require('conf.nvim-cmp') end
     }
-    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' }
-    use { 'saadparwaiz1/cmp_luasnip', requires = { 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets' } }
+    use { 'hrsh7th/cmp-path', requires = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', requires = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-emoji', requires = 'nvim-cmp' }
+    use {
+        'saadparwaiz1/cmp_luasnip',
+        requires = {
+            'nvim-cmp',
+            'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets'
+        }
+    }
     use {
         'hrsh7th/cmp-nvim-lsp',
         requires = {
+            'nvim-cmp',
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
         },
         config = function() require('conf.lsp') end
     }
+
+    -- control
     use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
@@ -66,3 +80,4 @@ return packer.startup(function(use)
         packer.sync()
     end
 end)
+
