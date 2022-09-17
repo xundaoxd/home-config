@@ -1,4 +1,4 @@
-local lsp_servers = { 'clangd', 'cmake' }
+local lsp_servers = {'clangd', 'cmake', 'pylsp'}
 
 local lspformatter = require('lsp-format')
 lspformatter.setup()
