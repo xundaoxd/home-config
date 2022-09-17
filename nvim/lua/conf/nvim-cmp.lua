@@ -1,25 +1,25 @@
-require("luasnip/loaders/from_vscode").lazy_load()
+require('luasnip/loaders/from_vscode').lazy_load()
 local luasnip = require('luasnip')
+
+local lspkind = require('lspkind')
 
 local cmp = require('cmp')
 cmp.setup({
     snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end
+        expand = function(args) luasnip.lsp_expand(args.body) end
     },
     mapping = cmp.mapping.preset.insert({
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -28,23 +28,37 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {'i', 's'}),
-        ['<CR>'] = cmp.mapping.confirm({
-            select = true ,
-            behavior = cmp.ConfirmBehavior.Replace
-        })
+        end, { 'i', 's' }),
+        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
+        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+        ['<C-e>'] = cmp.mapping({ i = cmp.mapping.close(), c = cmp.mapping.close() }),
+        ['<CR>'] = cmp.mapping({
+            i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+            c = function(fallback)
+                if cmp.visible() then
+                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                    fallback()
+                end
+            end
+        }),
     }),
     formatting = {
-        format = function(entry, item)
-            item.menu = ({
-                nvim_lsp = '[LSP]',
-                luasnip = '[Snippet]',
-                buffer = '[Buffer]',
-                path = '[Path]',
-                emoji = '[Emoji]',
-            })[entry.source.name]
-            return item
-        end
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            before = function(entry, item)
+                item.menu = ({
+                    nvim_lsp = '[LSP]',
+                    luasnip = '[Snippet]',
+                    buffer = '[Buffer]',
+                    path = '[Path]',
+                    emoji = '[Emoji]',
+                })[entry.source.name]
+                return item
+            end
+        })
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

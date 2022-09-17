@@ -27,16 +27,23 @@ return packer.startup(function(use)
     -- ui
     use 'mhinz/vim-startify'
     use {
+        'kyazdani42/nvim-web-devicons',
+        config = function() require('nvim-web-devicons').setup() end
+    }
+    use {
         'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('conf.nvim-tree') end
     }
     use {
         'nvim-lualine/lualine.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('conf.lualine') end
     }
     use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('bufferline').setup() end
     }
 
@@ -62,6 +69,10 @@ return packer.startup(function(use)
             'nvim-cmp',
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
+            {
+                'onsails/lspkind.nvim',
+                requires = 'kyazdani42/nvim-web-devicons',
+            }
         },
         config = function() require('conf.lsp') end
     }
