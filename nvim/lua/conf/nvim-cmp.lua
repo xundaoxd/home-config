@@ -81,6 +81,7 @@ cmp.setup({
         documentation = cmp.config.window.bordered()
     },
     formatting = {
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, item)
             item.kind = string.format("%s", kind_icons[item.kind])
             item.menu = ({
