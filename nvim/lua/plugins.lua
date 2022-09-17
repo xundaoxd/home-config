@@ -27,10 +27,6 @@ return packer.startup(function(use)
     -- ui
     use 'mhinz/vim-startify'
     use {
-        'kyazdani42/nvim-web-devicons',
-        config = function() require('nvim-web-devicons').setup() end
-    }
-    use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('conf.nvim-tree') end
@@ -87,7 +83,6 @@ return packer.startup(function(use)
         'voldikss/vim-floaterm',
         config = function() require('conf.vim-floaterm') end
     }
-    use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
         packer.sync()
     end
