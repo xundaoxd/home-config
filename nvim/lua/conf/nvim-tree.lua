@@ -32,9 +32,6 @@ local function vsplit_preview()
     else
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
     end
-
-    -- Finally refocus on tree if it was lost
-    view.focus()
 end
 
 local config = {

@@ -8,9 +8,8 @@ vim.keymap.set('n', '<leader>w', '<C-W>', opt)
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
-vim.keymap.set('n', '<leader>aq', ':wqa<CR>', opt)
-vim.keymap.set('n', '<leader>aw', ':wa<CR>', opt)
-vim.keymap.set('n', '<leader>q', ':q<CR>', opt)
+vim.keymap.set('n', '<leader>qa', ':wqa<CR>', opt)
+vim.keymap.set('n', '<leader>qq', ':q<CR>', opt)
 
 vim.keymap.set('', '<up>', '<nop>', opt)
 vim.keymap.set('', '<down>', '<nop>', opt)

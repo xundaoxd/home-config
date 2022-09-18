@@ -5,6 +5,8 @@ local options = {
     cursorline = true,
     list = true,
     listchars = 'tab:>-,trail:-',
+    wrap = false,
+    showcmd = true,
 
     mouse = 'a',
     clipboard = 'unnamedplus',
