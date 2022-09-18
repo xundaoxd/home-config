@@ -7,6 +7,7 @@ local options = {
     listchars = 'tab:>-,trail:-',
     wrap = false,
     showcmd = true,
+    scrolloff = 1000,
 
     mouse = 'a',
     clipboard = 'unnamedplus',
