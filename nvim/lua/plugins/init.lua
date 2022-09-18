@@ -29,12 +29,12 @@ return packer.startup(function(use)
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('conf.nvim-tree') end
+        config = function() require('plugins.nvim-tree') end
     }
     use {
         'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('conf.lualine') end
+        config = function() require('plugins.lualine') end
     }
     use {
         'akinsho/bufferline.nvim',
@@ -54,7 +54,7 @@ return packer.startup(function(use)
     }
     use {
         'hrsh7th/nvim-cmp',
-        config = function() require('conf.nvim-cmp') end
+        config = function() require('plugins.nvim-cmp') end
     }
     use { 'hrsh7th/cmp-path', requires = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', requires = 'nvim-cmp' }
@@ -74,7 +74,7 @@ return packer.startup(function(use)
             'neovim/nvim-lspconfig',
             'lukas-reineke/lsp-format.nvim',
         },
-        config = function() require('conf.cmp-nvim-lsp') end
+        config = function() require('plugins.cmp-nvim-lsp') end
     }
     use {
         'numToStr/Comment.nvim',
@@ -85,11 +85,11 @@ return packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
-        config = function() require('conf.telescope') end
+        config = function() require('plugins.telescope') end
     }
     use {
         'voldikss/vim-floaterm',
-        config = function() require('conf.vim-floaterm') end
+        config = function() require('plugins.vim-floaterm') end
     }
     use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
