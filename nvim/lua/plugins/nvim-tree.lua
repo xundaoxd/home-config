@@ -41,7 +41,7 @@ local config = {
         mappings = {
             custom_only = false,
             list = {
-                { key = "e", action = "edit", action_cb = edit_or_open },
+                { key = "L", action = "edit", action_cb = edit_or_open },
                 { key = "l", action = "vsplit_preview", action_cb = vsplit_preview },
                 { key = "h", action = "close_node" },
                 { key = "H", action = "collapse_all" }
