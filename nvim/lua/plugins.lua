@@ -47,7 +47,11 @@ return packer.startup(function(use)
         config = function() require('which-key').setup() end
     }
 
-    -- cmp
+    -- coding
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup() end
+    }
     use {
         'hrsh7th/nvim-cmp',
         config = function() require('conf.nvim-cmp') end

@@ -11,6 +11,9 @@ end, {'h', 'j', 'k', 'l'})
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
+vim.keymap.set({'n', 'v'}, 'H', '^', opt)
+vim.keymap.set({'n', 'v'}, 'L', '$', opt)
+
 vim.keymap.set('n', '<leader>qa', ':wqa<CR>', opt)
 vim.keymap.set('n', '<leader>qq', ':q<CR>', opt)
 
