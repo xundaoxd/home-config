@@ -5,12 +5,12 @@ for i=1,9,1 do
 end
 
 vim.tbl_map(function(i)
-    vim.keymap.set('n', '<leader>w'..i, '<C-W>'..i, opt)
+    vim.keymap.set('n', '<leader>w'..i, '<C-w>'..i, opt)
 end, {'h', 'j', 'k', 'l'})
-vim.keymap.set('i', '<C-H>', '<Left>', opt)
-vim.keymap.set('i', '<C-J>', '<Down>', opt)
-vim.keymap.set('i', '<C-K>', '<Up>', opt)
-vim.keymap.set('i', '<C-L>', '<Right>', opt)
+vim.keymap.set('i', '<C-h>', '<left>', opt)
+vim.keymap.set('i', '<C-j>', '<down>', opt)
+vim.keymap.set('i', '<C-k>', '<up>', opt)
+vim.keymap.set('i', '<C-l>', '<right>', opt)
 
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
