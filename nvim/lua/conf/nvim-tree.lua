@@ -53,6 +53,8 @@ local config = {
     }
 }
 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 require('nvim-tree').setup(config)
 
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', { silent = true, remap = false })
