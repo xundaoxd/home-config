@@ -8,7 +8,7 @@ local options = {
     wrap = false,
     showcmd = true,
     scrolloff = 1000,
-    timeoutlen = 500,
+    timeoutlen = 300,
 
     mouse = 'a',
     clipboard = 'unnamedplus',

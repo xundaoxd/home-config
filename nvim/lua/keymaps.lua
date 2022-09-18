@@ -4,7 +4,10 @@ for i=1,9,1 do
     vim.keymap.set('n', '<leader>'..i, ':b'..i..'<CR>', opt)
 end
 
-vim.keymap.set('n', '<leader>w', '<C-W>', opt)
+vim.tbl_map(function(i)
+    vim.keymap.set('n', '<leader>w'..i, '<C-W>'..i, opt)
+end, {'h', 'j', 'k', 'l'})
+
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
