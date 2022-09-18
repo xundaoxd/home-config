@@ -19,6 +19,7 @@ local options = {
     smartindent = true,
     expandtab = true,
 
+    swapfile = false,
     autoread = true,
     autowrite = true
 }
