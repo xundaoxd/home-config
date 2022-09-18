@@ -4,21 +4,21 @@ for i=1,9,1 do
     vim.keymap.set('n', '<leader>'..i, ':b'..i..'<CR>', opt)
 end
 
-vim.keymap.set('i', '<C-h>', '<left>', opt)
-vim.keymap.set('i', '<C-j>', '<down>', opt)
-vim.keymap.set('i', '<C-k>', '<up>', opt)
-vim.keymap.set('i', '<C-l>', '<right>', opt)
-
 vim.tbl_map(function(i)
     vim.keymap.set('n', '<leader>w'..i, '<C-w>'..i, opt)
 end, {'h', 'j', 'k', 'l'})
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
+vim.keymap.set('i', '<C-h>', '<left>', opt)
+vim.keymap.set('i', '<C-j>', '<down>', opt)
+vim.keymap.set('i', '<C-k>', '<up>', opt)
+vim.keymap.set('i', '<C-l>', '<right>', opt)
+
 vim.keymap.set({'n', 'v'}, 'H', '^', opt)
 vim.keymap.set({'n', 'v'}, 'L', '$', opt)
-vim.keymap.set('n', '<C-j>', '5j', opt)
-vim.keymap.set('n', '<C-k>', '5k', opt)
+vim.keymap.set({'n', 'v'}, 'J', '5j', opt)
+vim.keymap.set({'n', 'v'}, 'K', '5k', opt)
 
 vim.keymap.set('', '<C-s>', ':w<CR>', opt)
 vim.keymap.set('n', '<leader>qa', ':wqa<CR>', opt)

@@ -59,6 +59,7 @@ return packer.startup(function(use)
     use { 'hrsh7th/cmp-path', requires = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', requires = 'nvim-cmp' }
     use { 'hrsh7th/cmp-emoji', requires = 'nvim-cmp' }
+    use 'hrsh7th/cmp-calc'
     use {
         'saadparwaiz1/cmp_luasnip',
         requires = {

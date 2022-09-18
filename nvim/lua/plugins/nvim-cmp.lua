@@ -89,6 +89,7 @@ cmp.setup({
                 luasnip = '[Snippet]',
                 buffer = '[Buffer]',
                 path = '[Path]',
+                calc = '[Calc]',
                 emoji = '[Emoji]',
             })[entry.source.name]
             return item
@@ -97,8 +98,9 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'emoji' },
         { name = 'buffer' },
         { name = 'path' },
+        { name = 'calc' },
+        { name = 'emoji' },
     }),
 })
