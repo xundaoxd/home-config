@@ -42,10 +42,6 @@ return packer.startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('bufferline').setup() end
     }
-    use {
-        'folke/which-key.nvim',
-        config = function() require('which-key').setup() end
-    }
 
     -- coding
     use {
