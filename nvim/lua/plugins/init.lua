@@ -77,6 +77,7 @@ return packer.startup(function(use)
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
+    use 'terryma/vim-expand-region'
 
     -- control
     use {
