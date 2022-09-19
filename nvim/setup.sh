@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pacman -S --noconfirm neovim python-pip ripgrep-all cmake
+pacman -S --noconfirm neovim python-pynvim xclip python-pip ripgrep-all cmake
 
