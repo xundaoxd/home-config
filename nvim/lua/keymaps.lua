@@ -29,6 +29,8 @@ vim.keymap.set('i', '<C-l>', '<right>', opt)
 
 vim.keymap.set({'n', 'v'}, 'H', '^', opt)
 vim.keymap.set({'n', 'v'}, 'L', '$', opt)
+vim.keymap.set({'n', 'v'}, 'dL', 'd$', opt)
+vim.keymap.set({'n', 'v'}, 'dH', 'd0', opt)
 vim.keymap.set({'n', 'v'}, 'J', '5j', opt)
 vim.keymap.set({'n', 'v'}, 'K', '5k', opt)
 
