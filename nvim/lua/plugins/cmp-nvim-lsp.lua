@@ -1,4 +1,4 @@
-local lsp_servers = {'clangd', 'cmake', 'pylsp', 'bashls', 'dotls', 'jsonls', 'jsonnet_ls', 'denols'}
+local lsp_servers = {'clangd', 'cmake', 'pylsp', 'bashls'}
 
 local lspformatter = require('lsp-format')
 lspformatter.setup()
