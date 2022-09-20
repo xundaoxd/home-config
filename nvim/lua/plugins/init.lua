@@ -82,6 +82,11 @@ return packer.startup(function(use)
 
     -- control
     use {
+        'sindrets/diffview.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function() require('plugins.diffview') end
+    }
+    use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('plugins.telescope') end
