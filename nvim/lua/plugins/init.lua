@@ -91,6 +91,10 @@ return packer.startup(function(use)
         config = function() require('gitsigns').setup() end
     }
     use {
+        'APZelos/blamer.nvim',
+        config = function() vim.g.blamer_enabled = 1 end
+    }
+    use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('plugins.telescope') end
