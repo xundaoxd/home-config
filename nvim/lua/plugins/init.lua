@@ -87,6 +87,10 @@ return packer.startup(function(use)
         config = function() require('plugins.diffview') end
     }
     use {
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup() end
+    }
+    use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('plugins.telescope') end
