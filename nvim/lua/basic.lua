@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 
 local options = {
     number = true,
+    relativenumber = true,
     cursorline = true,
     list = true,
     listchars = 'tab:>-,trail:-',
