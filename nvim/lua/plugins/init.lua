@@ -44,6 +44,7 @@ return packer.startup(function(use)
     }
 
     -- coding
+    use 'terryma/vim-multiple-cursors'
     use {
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
