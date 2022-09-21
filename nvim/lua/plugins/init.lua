@@ -84,6 +84,7 @@ return packer.startup(function(use)
         config = function() require('Comment').setup() end
     }
     use 'terryma/vim-expand-region'
+    use 'tpope/vim-surround'
 
     -- control
     use {
