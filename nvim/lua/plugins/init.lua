@@ -42,6 +42,10 @@ return packer.startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('bufferline').setup() end
     }
+    use {
+        'luochen1990/rainbow',
+        config = function() vim.g.rainbow_active = 1 end
+    }
 
     -- coding
     use 'terryma/vim-multiple-cursors'

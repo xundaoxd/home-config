@@ -1,2 +1,2 @@
-vim.keymap.set('n', '<F3>', ':FloatermToggle<CR>', { silent = true, remap = false })
+vim.keymap.set('n', '<F5>', ':FloatermToggle<CR>', { silent = true, remap = false })
 
