@@ -23,7 +23,7 @@ vim.keymap.set({'n', 'v'}, 'dH', 'd0', opt)
 vim.keymap.set({'n', 'v'}, 'J', '10j', opt)
 vim.keymap.set({'n', 'v'}, 'K', '10k', opt)
 
-vim.keymap.set('', '<C-s>', ':w<CR>', opt)
+vim.keymap.set({'n', 'v'}, '<C-s>', ':w<CR>', opt)
 vim.keymap.set('n', '<leader>qa', ':wqa<CR>', opt)
 vim.keymap.set('n', '<leader>qq', ':q<CR>', opt)
 
