@@ -50,6 +50,12 @@ return packer.startup(function(use)
     -- coding
     use 'terryma/vim-multiple-cursors'
     use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
+    }
+    use 'terryma/vim-expand-region'
+    use 'tpope/vim-surround'
+    use {
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
@@ -80,12 +86,6 @@ return packer.startup(function(use)
         },
         config = function() require('plugins.cmp-nvim-lsp') end
     }
-    use {
-        'numToStr/Comment.nvim',
-        config = function() require('Comment').setup() end
-    }
-    use 'terryma/vim-expand-region'
-    use 'tpope/vim-surround'
 
     -- control
     use {
