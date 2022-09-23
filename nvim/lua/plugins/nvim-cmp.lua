@@ -71,7 +71,12 @@ cmp.setup({
             i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
             c = function(fallback)
                 if cmp.visible() then
-                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                    local e = cmp.get_active_entry()
+                    if e == nil or vim.tbl_isempty(e) then
+                        cmp.close()
+                    else
+                        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                    end
                 else
                     fallback()
                 end
