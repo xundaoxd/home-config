@@ -60,6 +60,10 @@ return packer.startup(function(use)
         config = function() require('nvim-autopairs').setup() end
     }
     use {
+        'liuchengxu/vista.vim',
+        config = function() require('plugins.vista') end
+    }
+    use {
         'hrsh7th/nvim-cmp',
         config = function() require('plugins.nvim-cmp') end
     }
