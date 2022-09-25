@@ -93,6 +93,10 @@ return packer.startup(function(use)
 
     -- control
     use {
+        'williamboman/mason.nvim',
+        config = function() require('plugins.mason') end
+    }
+    use {
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function() require('plugins.diffview') end
