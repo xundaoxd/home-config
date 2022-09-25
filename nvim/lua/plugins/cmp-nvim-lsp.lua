@@ -1,8 +1,5 @@
 local lsp_servers = {'clangd', 'cmake', 'pyright', 'bashls'}
 
-local lspformatter = require('lsp-format')
-lspformatter.setup()
-
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
@@ -13,6 +10,8 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 
+local lspformatter = require('lsp-format')
+lspformatter.setup()
 local on_attach = function(client, bufnr)
     lspformatter.on_attach(client)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
