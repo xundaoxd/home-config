@@ -56,3 +56,9 @@ local config = {
 require('nvim-tree').setup(config)
 
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', { silent = true, remap = false })
+vim.cmd[[
+augroup ntree
+    autocmd VimEnter * NvimTreeToggle
+augroup END
+]]
+
