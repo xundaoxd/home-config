@@ -10,6 +10,8 @@ local options = {
     showcmd = true,
     scrolloff = 1000,
     timeoutlen = 500,
+    foldmethod = 'indent',
+    foldlevel = 1,
 
     mouse = 'a',
     clipboard = 'unnamedplus',
@@ -28,3 +30,4 @@ local options = {
 for k, v in pairs(options) do
     vim.o[k] = v
 end
+
