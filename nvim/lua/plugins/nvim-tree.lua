@@ -35,7 +35,6 @@ end
 local config = {
     view = {
         adaptive_size = true,
-        centralize_selection = true,
         mappings = {
             custom_only = false,
             list = {
@@ -45,6 +44,9 @@ local config = {
                 { key = "H", action = "collapse_all" }
             }
         },
+    },
+    renderer = {
+        add_trailing = true,
     },
     actions = {
         open_file = {
