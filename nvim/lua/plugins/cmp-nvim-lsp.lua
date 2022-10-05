@@ -1,5 +1,3 @@
-local lsp_servers = {'clangd', 'cmake', 'pyright', 'bashls'}
-
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
@@ -12,6 +10,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 
 local lspformatter = require('lsp-format')
 lspformatter.setup()
+
 local on_attach = function(client, bufnr)
     lspformatter.on_attach(client)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -28,7 +27,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>fm', vim.lsp.buf.formatting, bufopts)
 end
 
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -38,6 +36,7 @@ local function lsp_setup(lp)
         capabilities = capabilities,
     })
 end
+
 local lsps = require('plugins.common').lsp2server
 vim.tbl_map(lsp_setup, vim.tbl_keys(lsps))
 

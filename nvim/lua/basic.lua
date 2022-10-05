@@ -11,7 +11,7 @@ local options = {
     scrolloff = 1000,
     timeoutlen = 500,
     foldmethod = 'indent',
-    foldlevel = 1,
+    foldlevel = 4,
 
     mouse = 'a',
     clipboard = 'unnamedplus',
