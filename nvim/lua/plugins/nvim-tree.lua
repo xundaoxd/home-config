@@ -48,6 +48,10 @@ local config = {
     renderer = {
         add_trailing = true,
     },
+    update_focused_file = {
+        enable = true,
+        update_cwd = false
+    },
     actions = {
         open_file = {
             quit_on_open = false
