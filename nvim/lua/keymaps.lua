@@ -8,6 +8,7 @@ end
 vim.tbl_map(function(i)
     vim.keymap.set('n', '<leader>w'..i, '<C-w>'..i, opt)
 end, {'h', 'j', 'k', 'l'})
+
 vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
 vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
@@ -31,3 +32,4 @@ vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>', opt)
 vim.keymap.set({'n', 'v', 'i'}, '<down>', '<nop>', opt)
 vim.keymap.set({'n', 'v', 'i'}, '<left>', '<nop>', opt)
 vim.keymap.set({'n', 'v', 'i'}, '<right>', '<nop>', opt)
+

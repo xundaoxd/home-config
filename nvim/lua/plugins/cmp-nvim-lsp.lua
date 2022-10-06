@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
     lspformatter.on_attach(client)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { remap=false, silent=true, buffer=bufnr }
 
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
