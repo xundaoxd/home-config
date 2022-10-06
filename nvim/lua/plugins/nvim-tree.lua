@@ -49,11 +49,6 @@ local config = {
         enable = true,
         update_cwd = false
     },
-    actions = {
-        open_file = {
-            quit_on_open = false
-        }
-    }
 }
 
 require('nvim-tree').setup(config)
