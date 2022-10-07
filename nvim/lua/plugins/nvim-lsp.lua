@@ -8,15 +8,19 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 
-local lspformatter = require('lsp-format')
-lspformatter.setup()
+require('lsp-format').setup()
 
 local on_attach = function(client, bufnr)
-    lspformatter.on_attach(client)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    require('lsp_signature').on_attach({
+        bind = true,
+        handler_opts = {
+            border = 'rounded'
+        }
+    }, bufnr)
+
+    require('lsp-format').on_attach(client)
 
     local bufopts = { remap=false, silent=true, buffer=bufnr }
-
     vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, bufopts)
 
