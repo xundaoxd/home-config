@@ -65,23 +65,25 @@ return packer.startup(function(use)
     }
     use {
         'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-emoji',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-calc',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-nvim-lsp',
+        },
         config = function() require('plugins.nvim-cmp') end
     }
-    use { 'hrsh7th/cmp-path', requires = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-buffer', requires = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-emoji', requires = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-cmdline', requires = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-calc', requires = 'nvim-cmp' }
     use {
         'saadparwaiz1/cmp_luasnip',
         requires = {
-            'nvim-cmp',
             'L3MON4D3/LuaSnip',
             'rafamadriz/friendly-snippets',
             'honza/vim-snippets'
         }
     }
-    use { 'hrsh7th/cmp-nvim-lsp', requires = 'nvim-cmp' }
     use {
         'neovim/nvim-lspconfig',
         requires = {

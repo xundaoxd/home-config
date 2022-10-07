@@ -32,7 +32,7 @@ local function vsplit_preview()
     end
 end
 
-local config = {
+require('nvim-tree').setup({
     view = {
         adaptive_size = true,
         mappings = {
@@ -47,10 +47,8 @@ local config = {
     },
     update_focused_file = {
         enable = true,
-        update_cwd = false
     },
-}
+})
 
-require('nvim-tree').setup(config)
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', { silent = true, remap = false })
 

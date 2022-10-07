@@ -1,7 +1,6 @@
 require('luasnip/loaders/from_vscode').lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
 
-local luasnip = require('luasnip')
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -33,7 +32,7 @@ local kind_icons = {
 local cmp = require('cmp')
 cmp.setup({
     snippet = {
-        expand = function(args) luasnip.lsp_expand(args.body) end
+        expand = function(args) require('luasnip').lsp_expand(args.body) end
     },
     mapping = cmp.mapping.preset.insert({
         ['<Tab>'] = cmp.mapping(function(fallback)
@@ -52,7 +51,7 @@ cmp.setup({
         end, { 'i', 's' }),
         ['<C-k>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
         ['<C-j>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
-        ['<C-e>'] = cmp.mapping({ i = cmp.mapping.close(), c = cmp.mapping.close() }),
+        ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping({
             i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
             c = function(fallback)
