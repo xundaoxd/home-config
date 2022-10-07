@@ -34,7 +34,7 @@ return packer.startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.lualine') end
+        config = function() require('lualine').setup() end
     }
     use {
         'akinsho/bufferline.nvim',
@@ -71,7 +71,7 @@ return packer.startup(function(use)
     use { 'hrsh7th/cmp-buffer', requires = 'nvim-cmp' }
     use { 'hrsh7th/cmp-emoji', requires = 'nvim-cmp' }
     use { 'hrsh7th/cmp-cmdline', requires = 'nvim-cmp' }
-    use 'hrsh7th/cmp-calc'
+    use { 'hrsh7th/cmp-calc', requires = 'nvim-cmp' }
     use {
         'saadparwaiz1/cmp_luasnip',
         requires = {
@@ -81,14 +81,14 @@ return packer.startup(function(use)
             'honza/vim-snippets'
         }
     }
+    use { 'hrsh7th/cmp-nvim-lsp', requires = 'nvim-cmp' }
     use {
-        'hrsh7th/cmp-nvim-lsp',
+        'neovim/nvim-lspconfig',
         requires = {
-            'nvim-cmp',
-            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
             'lukas-reineke/lsp-format.nvim',
         },
-        config = function() require('plugins.cmp-nvim-lsp') end
+        config = function() require('plugins.nvim-lsp') end
     }
 
     -- control
@@ -99,7 +99,7 @@ return packer.startup(function(use)
     use {
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',
-        config = function() require('plugins.diffview') end
+        config = function() require('diffview').setup() end
     }
     use {
         'lewis6991/gitsigns.nvim',
