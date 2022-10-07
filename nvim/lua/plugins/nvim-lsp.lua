@@ -8,8 +8,6 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 
-require('lsp-format').setup()
-
 local on_attach = function(client, bufnr)
     require('lsp_signature').on_attach({
         bind = true,
@@ -17,7 +15,6 @@ local on_attach = function(client, bufnr)
             border = 'rounded'
         }
     }, bufnr)
-
     require('lsp-format').on_attach(client)
 
     local bufopts = { remap=false, silent=true, buffer=bufnr }

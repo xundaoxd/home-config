@@ -93,6 +93,10 @@ return packer.startup(function(use)
         },
         config = function() require('plugins.nvim-lsp') end
     }
+    use {
+        'lukas-reineke/lsp-format',
+        config = function() require('lsp-format').setup() end
+    }
 
     -- control
     use {
