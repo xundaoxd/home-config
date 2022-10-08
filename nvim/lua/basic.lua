@@ -10,6 +10,7 @@ local options = {
     showcmd = true,
     scrolloff = 1000,
     timeoutlen = 500,
+
     foldmethod = 'indent',
     foldlevelstart = 99,
 

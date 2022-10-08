@@ -27,11 +27,6 @@ return packer.startup(function(use)
     -- ui
     use 'mhinz/vim-startify'
     use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.nvim-tree') end
-    }
-    use {
         'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('lualine').setup() end
@@ -49,20 +44,17 @@ return packer.startup(function(use)
 
     -- coding
     use 'terryma/vim-multiple-cursors'
+    use 'terryma/vim-expand-region'
+    use 'tpope/vim-surround'
     use {
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
-    use 'terryma/vim-expand-region'
-    use 'tpope/vim-surround'
     use {
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
-    use {
-        'liuchengxu/vista.vim',
-        config = function() require('plugins.vista') end
-    }
+    -- auto cmp
     use {
         'hrsh7th/nvim-cmp',
         requires = {
@@ -91,14 +83,23 @@ return packer.startup(function(use)
             'lukas-reineke/lsp-format.nvim',
             'ray-x/lsp_signature.nvim',
         },
-        config = function() require('plugins.nvim-lsp') end
+        config = function() require('plugins.nvim-lspconfig') end
     }
     use {
-        'lukas-reineke/lsp-format',
+        'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup() end
     }
 
     -- control
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require('plugins.nvim-tree') end
+    }
+    use {
+        'liuchengxu/vista.vim',
+        config = function() require('plugins.vista') end
+    }
     use {
         'williamboman/mason.nvim',
         config = function() require('plugins.mason') end
