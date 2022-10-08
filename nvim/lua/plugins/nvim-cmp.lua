@@ -25,12 +25,12 @@ cmp.setup({
                 if e == nil or vim.tbl_isempty(e) then
                     cmp.close()
                 else
-                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                    cmp.confirm()
                 end
             else
                 fallback()
             end
-            end),
+        end),
     }),
     formatting = {
         fields = { "kind", "abbr", "menu" },
