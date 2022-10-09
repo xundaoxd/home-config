@@ -43,8 +43,15 @@ return packer.startup(function(use)
     }
 
     -- colorscheme
-    use 'morhetz/gruvbox'
-    use 'arcticicestudio/nord-vim'
+    use { 
+        'arcticicestudio/nord-vim',
+        'morhetz/gruvbox',
+        config = function()
+            vim.cmd[[
+            colorscheme gruvbox
+            ]]
+        end
+    }
 
     -- coding
     use 'terryma/vim-multiple-cursors'
