@@ -95,6 +95,10 @@ return packer.startup(function(use)
         config = function() require('lsp-format').setup() end
     }
     use {
+        'ray-x/lsp_signature.nvim',
+        config = function() require('plugins.lsp_signature') end
+    }
+    use {
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
