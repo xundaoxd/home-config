@@ -46,11 +46,6 @@ return packer.startup(function(use)
     use { 
         'arcticicestudio/nord-vim',
         'morhetz/gruvbox',
-        config = function()
-            vim.cmd[[
-            colorscheme gruvbox
-            ]]
-        end
     }
 
     -- coding
