@@ -32,3 +32,6 @@ for k, v in pairs(options) do
     vim.o[k] = v
 end
 
+local colorscheme = 'gruvbox'
+local _, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+
