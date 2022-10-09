@@ -42,6 +42,10 @@ return packer.startup(function(use)
         config = function() vim.g.rainbow_active = 1 end
     }
 
+    -- colorscheme
+    use 'morhetz/gruvbox'
+    use 'arcticicestudio/nord-vim'
+
     -- coding
     use 'terryma/vim-multiple-cursors'
     use 'terryma/vim-expand-region'
