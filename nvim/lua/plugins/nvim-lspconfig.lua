@@ -8,9 +8,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
 
-    vim.keymap.set('n', 'rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'fm', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<leader>fm', vim.lsp.buf.formatting, bufopts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

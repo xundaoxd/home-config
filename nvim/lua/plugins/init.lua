@@ -94,6 +94,13 @@ return packer.startup(function(use)
         'lukas-reineke/lsp-format.nvim',
         config = function() require('lsp-format').setup() end
     }
+    use {
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('plugins.trouble')
+        end
+    }
 
     -- control
     use {
