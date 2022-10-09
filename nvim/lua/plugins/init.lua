@@ -41,6 +41,12 @@ return packer.startup(function(use)
         'luochen1990/rainbow',
         config = function() vim.g.rainbow_active = 1 end
     }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('indent_blankline').setup()
+        end
+    }
 
     -- colorscheme
     use { 
