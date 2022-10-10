@@ -13,6 +13,7 @@ local options = {
 
     foldmethod = 'indent',
     foldlevelstart = 99,
+    tags = '.tags;.ctags;tags;ctags',
 
     mouse = 'a',
     clipboard = 'unnamedplus',
