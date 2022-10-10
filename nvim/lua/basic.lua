@@ -10,10 +10,10 @@ local options = {
     showcmd = true,
     scrolloff = 1000,
     timeoutlen = 500,
+    tags = '.ctags',
 
     foldmethod = 'indent',
     foldlevelstart = 99,
-    tags = '.tags;.ctags;tags;ctags',
 
     mouse = 'a',
     clipboard = 'unnamedplus',
@@ -35,4 +35,6 @@ end
 
 local colorscheme = 'gruvbox'
 local _, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+
+vim.api.nvim_create_user_command("GenTags", function() vim.fn.system({'ctags', '-R', '-o', '.ctags'}) end, {})
 
