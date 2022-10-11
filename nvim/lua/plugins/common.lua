@@ -4,6 +4,10 @@ local lsp2server = {
     pyright = 'pyright',
     bashls = 'bash-language-server',
     awk_ls = 'awk-language-server',
+    opencl_ls = 'opencl-language-server',
+    dockerls = 'dockerfile-language-server',
+    marksman = 'marksman',
+    tsserver = 'typescript-language-server',
 }
 
 return {
