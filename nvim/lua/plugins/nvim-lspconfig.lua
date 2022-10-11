@@ -2,8 +2,8 @@ local on_attach = function(client, bufnr)
     require('lsp-format').on_attach(client)
 
     local bufopts = { remap=false, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', '<leader>gD', vim.lsp.buf.definition, bufopts)
 
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
