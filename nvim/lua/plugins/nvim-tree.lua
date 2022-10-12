@@ -48,6 +48,9 @@ require('nvim-tree').setup({
     update_focused_file = {
         enable = true,
     },
+    git = {
+        ignore = false,
+    }
 })
 
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', { silent = true, remap = false })
