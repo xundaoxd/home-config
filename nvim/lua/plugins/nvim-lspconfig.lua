@@ -10,8 +10,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>fm', vim.lsp.buf.formatting, bufopts)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function lsp_setup(lp)
     require('lspconfig')[lp].setup({
