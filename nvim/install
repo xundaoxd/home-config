@@ -1,0 +1,6 @@
+#!/bin/bash
+
+self_dir=`dirname $0`
+
+ln -sf `realpath $self_dir` ~/.config/
+
