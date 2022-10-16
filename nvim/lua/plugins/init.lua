@@ -94,13 +94,8 @@ return packer.startup(function(use)
         'neovim/nvim-lspconfig',
         requires = {
             'hrsh7th/cmp-nvim-lsp',
-            'lukas-reineke/lsp-format.nvim',
         },
         config = function() require('plugins.nvim-lspconfig') end
-    }
-    use {
-        'lukas-reineke/lsp-format.nvim',
-        config = function() require('lsp-format').setup() end
     }
     use {
         'ray-x/lsp_signature.nvim',
