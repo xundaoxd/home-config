@@ -5,7 +5,7 @@ local on_attach = function(client, bufnr)
 
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format, bufopts)
+    vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.formatting() end, bufopts)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
