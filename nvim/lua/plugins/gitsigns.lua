@@ -11,6 +11,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>hr', gs.reset_hunk, opts)
 vim.keymap.set({ 'n', 'v' }, '<leader>hs', gs.stage_hunk, opts)
 vim.keymap.set({ 'n', 'v' }, '<leader>hu', gs.undo_stage_hunk, opts)
 
-vim.keymap.set({ 'n', 'v' }, '<leader>hR', gs.reset_buffer, opts)
-vim.keymap.set({ 'n', 'v' }, '<leader>hS', gs.stage_buffer, opts)
+vim.keymap.set({ 'n', 'v' }, '<leader>hhr', gs.reset_buffer, opts)
+vim.keymap.set({ 'n', 'v' }, '<leader>hhs', gs.stage_buffer, opts)
 
