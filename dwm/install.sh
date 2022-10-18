@@ -1,6 +1,6 @@
 #!/bin/bash
 
-self_dir=`dirname $0`
+self_dir=`realpath $(dirname $0)`
 
 mkdir -p ~/.local/share/dwm
 ln -sf $self_dir/autostart/autostart.sh ~/.local/share/dwm/
