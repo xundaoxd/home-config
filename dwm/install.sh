@@ -2,6 +2,9 @@
 
 self_dir=`dirname $0`
 
-mkdir -p ~/.dwm
-cp -r $self_dir/autostart/* ~/.dwm/
+mkdir -p ~/.local/share/dwm
+ln -sf $self_dir/autostart/autostart.sh ~/.local/share/dwm/
+
+mkdir -p .config
+ln -sf $self_dir/picom/picom.conf ~/.config/picom.conf
 
