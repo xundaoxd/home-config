@@ -1,4 +1,6 @@
 #!/bin/bash
 
-picom -b
+feh --bg-fill --randomize ~/Pictures/Wallpaper/* &
+
+picom &
 
