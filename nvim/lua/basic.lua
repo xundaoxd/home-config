@@ -8,7 +8,7 @@ local options = {
     listchars = 'tab:>-,trail:-',
     wrap = false,
     showcmd = true,
-    scrolloff = 1000,
+    scrolloff = 16,
     timeoutlen = 500,
     tags = '.ctags',
 
@@ -16,7 +16,6 @@ local options = {
     foldlevelstart = 99,
 
     mouse = 'a',
-    clipboard = 'unnamedplus',
 
     shiftwidth = 4,
     tabstop = 4,
