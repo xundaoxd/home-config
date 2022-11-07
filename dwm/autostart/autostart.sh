@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill --randomize ~/Pictures/Wallpaper/* &
+feh -r --bg-fill -z --no-fehbg ~/Pictures/Wallpaper/* &
 picom &
 
 export SEP1="["
