@@ -149,6 +149,10 @@ return packer.startup(function(use)
         'voldikss/vim-floaterm',
         config = function() require('plugins.vim-floaterm') end
     }
+    use {
+        'kazhala/close-buffers.nvim',
+        config = function() require('plugins.close-buffers') end
+    }
     use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
         packer.sync()
