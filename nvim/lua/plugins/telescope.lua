@@ -1,5 +1,13 @@
 require('telescope').setup({
     extensions = {
+        live_grep_args = {
+            auto_quoting = true,
+            mappings = {
+                i = {
+                    ['<C-k>'] = require('telescope-live-grep-args.actions').quote_prompt(),
+                }
+            }
+        },
         ['ui-select'] = {
             require('telescope.themes').get_dropdown()
         }
