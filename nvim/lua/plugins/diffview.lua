@@ -1,7 +1,10 @@
 require('diffview').setup({
     view = {
+        default = {
+            layout = 'diff2_horizontal',
+        },
         merge_tool = {
-            layout = 'diff1_plain'
+            disable_diagnostics = true,
         }
     }
 })
