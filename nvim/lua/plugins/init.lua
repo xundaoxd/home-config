@@ -151,6 +151,10 @@ return packer.startup(function(use)
         config = function() require('plugins.telescope') end
     }
     use {
+        'easymotion/vim-easymotion',
+        config = function() require('plugins.vim-easymotion') end
+    }
+    use {
         'voldikss/vim-floaterm',
         config = function() require('plugins.vim-floaterm') end
     }
