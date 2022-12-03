@@ -65,6 +65,11 @@ return packer.startup(function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
+    use {
+        'junegunn/vim-easy-align',
+        config = function() require('plugins.vim-easy-align') end
+    }
+
     -- auto cmp
     use {
         'hrsh7th/nvim-cmp',
@@ -88,6 +93,7 @@ return packer.startup(function(use)
             'honza/vim-snippets'
         }
     }
+
     -- lspconfig
     use {
         'neovim/nvim-lspconfig',
