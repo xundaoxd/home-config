@@ -160,6 +160,7 @@ return packer.startup(function(use)
     }
     use {
         'kazhala/close-buffers.nvim',
+        requires = 'akinsho/bufferline.nvim',
         config = function() require('plugins.close-buffers') end
     }
     use 'lewis6991/impatient.nvim'
