@@ -12,15 +12,11 @@ local options = {
     timeoutlen = 500,
     tags = '.ctags',
 
-    foldmethod = 'indent',
-    foldlevelstart = 99,
-
     mouse = 'a',
 
     shiftwidth = 4,
     tabstop = 4,
     smarttab = true,
-    smartindent = true,
     expandtab = true,
 
     swapfile = false,
