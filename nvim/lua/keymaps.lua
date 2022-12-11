@@ -9,8 +9,8 @@ vim.tbl_map(function(i)
     vim.keymap.set('n', '<leader>w'..i, '<C-w>'..i, opt)
 end, {'h', 'j', 'k', 'l'})
 
-vim.keymap.set('n', '<leader>sp', ':sp<CR>', opt)
-vim.keymap.set('n', '<leader>sv', ':vs<CR>', opt)
+vim.keymap.set('n', '<leader>ps', ':split<CR>', opt)
+vim.keymap.set('n', '<leader>vs', ':vs<CR>', opt)
 
 vim.keymap.set('i', '<C-h>', '<left>', opt)
 vim.keymap.set('i', '<C-j>', '<down>', opt)
