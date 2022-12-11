@@ -24,6 +24,8 @@ vim.keymap.set('n', '<leader>dw', '"+dw', opt)
 vim.keymap.set('v', '<leader>y', '"+y', opt)
 vim.keymap.set('n', '<leader>yy', '"+yy', opt)
 vim.keymap.set('n', '<leader>yw', 'viw"+y', opt)
+vim.keymap.set('n', '<leader>p', '"+p', opt)
+vim.keymap.set('n', '<leader>P', '"+P', opt)
 
 vim.keymap.set({'n', 'v'}, 'H', '^', opt)
 vim.keymap.set({'n', 'v'}, 'L', '$', opt)
