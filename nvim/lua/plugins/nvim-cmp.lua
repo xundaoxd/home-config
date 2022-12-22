@@ -35,7 +35,7 @@ cmp.setup({
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = require('lspkind').cmp_format({
-            mode = 'symbol_text',
+            mode = 'symbol',
             maxwidth = 50,
             ellipsis_char = '...',
         })
