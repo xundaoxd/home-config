@@ -13,7 +13,12 @@ install_osh() {
     git clone https://gitee.com/mirrors/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-    echo '[ -d $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+    cat >> ~/.zshrc << \EOF
+add_local() {
+    [ -d $1/bin ] && export PATH="$1/bin:$PATH"
+}
+add_local $HOME/.local
+EOF
     if [[ $SHELL != *zsh ]]; then
         chsh -s `which zsh`
     fi
