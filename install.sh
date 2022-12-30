@@ -1,6 +1,7 @@
 #!/bin/bash
 
-self_dir=`dirname $0`
+self_path=`realpath ${BASH_SOURCE[0]:-$0}`
+self_dir=`dirname $self_path`
 
 ./zsh/install.sh
 ./nvim/install.sh
