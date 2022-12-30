@@ -6,7 +6,7 @@ for i=1,9,1 do
 end
 
 vim.tbl_map(function(i)
-    vim.keymap.set('n', '<leader>w'..i, '<C-w>'..i, opt)
+    vim.keymap.set('n', string.format('<C-%s>', i), '<C-w>'..i, opt)
 end, {'h', 'j', 'k', 'l'})
 
 vim.keymap.set('n', '<leader>sp', ':split<CR>', opt)
