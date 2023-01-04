@@ -84,6 +84,8 @@ return packer.startup(function(use)
     use {
         'hrsh7th/nvim-cmp',
         requires = {
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
             'onsails/lspkind.nvim',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
@@ -91,7 +93,6 @@ return packer.startup(function(use)
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-calc',
             'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
         },
         config = function() require('plugins.nvim-cmp') end
     }
@@ -102,15 +103,6 @@ return packer.startup(function(use)
             'rafamadriz/friendly-snippets',
             'honza/vim-snippets'
         }
-    }
-
-    -- lspconfig
-    use {
-        'neovim/nvim-lspconfig',
-        requires = {
-            'hrsh7th/cmp-nvim-lsp',
-        },
-        config = function() require('plugins.nvim-lspconfig') end
     }
     use {
         'ray-x/lsp_signature.nvim',
