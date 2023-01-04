@@ -109,6 +109,10 @@ return packer.startup(function(use)
         config = function() require('plugins.lsp_signature') end
     }
     use {
+        'liuchengxu/vista.vim',
+        config = function() require('plugins.vista') end
+    }
+    use {
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
@@ -116,19 +120,15 @@ return packer.startup(function(use)
         end
     }
 
-    -- control
+    -- misc
+    use {
+        'williamboman/mason.nvim',
+        config = function() require('plugins.mason') end
+    }
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('plugins.nvim-tree') end
-    }
-    use {
-        'liuchengxu/vista.vim',
-        config = function() require('plugins.vista') end
-    }
-    use {
-        'williamboman/mason.nvim',
-        config = function() require('plugins.mason') end
     }
     use {
         'sindrets/diffview.nvim',
