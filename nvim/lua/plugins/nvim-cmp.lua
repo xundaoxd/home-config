@@ -12,18 +12,15 @@ local on_attach = function(client, bufnr)
         vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.formatting() end, bufopts)
     end
 end
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local function lsp_setup(lp)
-    require('lspconfig')[lp].setup({
+local lsp = {'clangd', 'cmake', 'pyright', 'bashls', 'awk_ls', 'opencl_ls', 'dockerls', 'marksman', 'tsserver'}
+for _, item in ipairs(lsp) do
+    require('lspconfig')[item].setup({
         on_attach = on_attach,
         capabilities = capabilities,
     })
 end
-
-local lsps = require('plugins.common').lsp2server
-vim.tbl_map(lsp_setup, vim.tbl_keys(lsps))
 
 require('luasnip/loaders/from_vscode').lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
