@@ -4,6 +4,7 @@ local options = {
     number = true,
     relativenumber = true,
     cursorline = true,
+    cursorcolumn = true,
     list = true,
     listchars = 'tab:>-,trail:-',
     wrap = false,
