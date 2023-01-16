@@ -34,8 +34,8 @@ vim.keymap.set({'n', 'v'}, 'K', '10k', opt)
 vim.keymap.set({'n', 'v'}, 'W', 'b', opt)
 vim.keymap.set({'n', 'v'}, 'E', 'ge', opt)
 
-vim.keymap.set({'n', 'v'}, 'dL', 'd$', opt)
-vim.keymap.set({'n', 'v'}, 'dH', 'd0', opt)
+vim.keymap.set('n', 'dL', 'd$', opt)
+vim.keymap.set('n', 'dH', 'd0', opt)
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', opt)
 vim.keymap.set('n', '<leader>qq', ':wqa!<CR>', opt)
