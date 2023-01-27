@@ -14,7 +14,11 @@ local on_attach = function(client, bufnr)
 end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local lsp = {'clangd', 'cmake', 'pyright', 'bashls', 'awk_ls', 'opencl_ls', 'dockerls', 'marksman', 'tsserver'}
+local lsp = {
+            'clangd', 'cmake', 'pyright',
+            'bashls', 'awk_ls', 'opencl_ls',
+            'dockerls', 'marksman', 'tsserver'
+        }
 for _, item in ipairs(lsp) do
     require('lspconfig')[item].setup({
         on_attach = on_attach,
