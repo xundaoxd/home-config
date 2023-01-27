@@ -1,30 +1,36 @@
-local on_attach = function(client, bufnr)
-    local bufopts = { remap=false, silent=true, buffer=bufnr }
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', '<leader>gD', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
+local lsp_setup = function(lsp, opts)
+    local on_attach = function(client, bufnr)
+        local bufopts = { remap=false, silent=true, buffer=bufnr }
+        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set('n', '<leader>gD', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
 
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-    if vim.lsp.buf.format then
-        vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, bufopts)
-    else
-        vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.formatting() end, bufopts)
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+        if vim.lsp.buf.format then
+            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, bufopts)
+        else
+            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.formatting() end, bufopts)
+        end
     end
-end
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lsp = {
-            'clangd', 'cmake', 'pyright',
-            'bashls', 'awk_ls', 'opencl_ls',
-            'dockerls', 'marksman', 'tsserver'
-        }
-for _, item in ipairs(lsp) do
-    require('lspconfig')[item].setup({
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local opts_ = {
         on_attach = on_attach,
         capabilities = capabilities,
-    })
+    }
+    if opts ~= nil then
+        opts_ = vim.tbl_extend("force", opts_, opts)
+    end
+    require('lspconfig')[lsp].setup(opts_)
 end
+
+vim.tbl_map(function(i)
+    lsp_setup(i, nil)
+end, {
+    'clangd', 'cmake', 'pyright',
+    'bashls', 'awk_ls', 'opencl_ls',
+    'dockerls', 'marksman', 'tsserver'
+})
 
 require('luasnip/loaders/from_vscode').lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
