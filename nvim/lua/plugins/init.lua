@@ -75,12 +75,17 @@ return packer.startup(function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
-    use {
-        'junegunn/vim-easy-align',
-        config = function() require('plugins.vim-easy-align') end
-    }
+    use 'junegunn/vim-easy-align'
 
     -- auto cmp
+    use {
+        'saadparwaiz1/cmp_luasnip',
+        requires = {
+            'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets',
+            'honza/vim-snippets'
+        }
+    }
     use {
         'hrsh7th/nvim-cmp',
         requires = {
@@ -95,14 +100,6 @@ return packer.startup(function(use)
             'saadparwaiz1/cmp_luasnip',
         },
         config = function() require('plugins.nvim-cmp') end
-    }
-    use {
-        'saadparwaiz1/cmp_luasnip',
-        requires = {
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-            'honza/vim-snippets'
-        }
     }
     use {
         'ray-x/lsp_signature.nvim',
