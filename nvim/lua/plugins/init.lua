@@ -109,13 +109,6 @@ return packer.startup(function(use)
         'liuchengxu/vista.vim',
         config = function() require('plugins.vista') end
     }
-    use {
-        'folke/trouble.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function()
-            require('plugins.trouble')
-        end
-    }
 
     -- misc
     use {
