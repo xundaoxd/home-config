@@ -56,11 +56,10 @@ return packer.startup(function(use)
             require('plugins.nvim-treesitter')
         end
     }
-
-    -- colorscheme
-    use { 
-        'arcticicestudio/nord-vim',
+    use {
         'morhetz/gruvbox',
+        event = 'VimEnter',
+        config = function() vim.cmd[[colorscheme gruvbox]] end
     }
 
     -- coding
@@ -149,11 +148,6 @@ return packer.startup(function(use)
     use {
         'voldikss/vim-floaterm',
         config = function() require('plugins.vim-floaterm') end
-    }
-    use {
-        'kazhala/close-buffers.nvim',
-        requires = 'akinsho/bufferline.nvim',
-        config = function() require('plugins.close-buffers') end
     }
     use 'lewis6991/impatient.nvim'
     if packer_bootstrap then

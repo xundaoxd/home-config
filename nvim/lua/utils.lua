@@ -1,15 +1,24 @@
-local function buf_is_valid(buf_num)
-  if not buf_num or buf_num < 1 then return false end
-  local exists = vim.api.nvim_buf_is_valid(buf_num)
-  return vim.bo[buf_num].buflisted and exists
+local M = {}
+
+function M.valid_bufs()
+    local bufs = vim.api.nvim_list_bufs()
+    return vim.tbl_filter(function(buf)
+        return vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buflisted
+    end, bufs)
 end
 
-local M = {}
-function M.switch_buf(buf_id)
-    local bufs = vim.api.nvim_list_bufs()
-    local valid_bufs = vim.tbl_filter(buf_is_valid, bufs)
-    if valid_bufs[buf_id] then
-        vim.api.nvim_win_set_buf(0, valid_bufs[buf_id])
+function M.switch_buf(buf_idx)
+    local valid_bufs = M.valid_bufs()
+    if valid_bufs[buf_idx] then
+        vim.api.nvim_win_set_buf(0, valid_bufs[buf_idx])
+    end
+end
+
+function M.hidden_buf(buf_idx)
+    local valid_bufs = M.valid_bufs()
+    if valid_bufs[buf_idx] then
+        vim.bo[valid_bufs[buf_idx]].buflisted = false
+        M.switch_buf(buf_idx)
     end
 end
 
