@@ -22,9 +22,3 @@ vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find)
 vim.keymap.set('n', '<leader>ft', builtin.tags)
 
-vim.keymap.set('n', '<leader>fs', builtin.lsp_workspace_symbols)
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references)
-vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions)
-vim.keymap.set('n', '<leader>fi', builtin.lsp_incoming_calls)
-vim.keymap.set('n', '<leader>fo', builtin.lsp_outgoing_calls)
-

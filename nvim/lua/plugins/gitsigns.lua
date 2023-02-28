@@ -1,16 +1,15 @@
-local gs = require('gitsigns')
-gs.setup()
+local gitsigns = require('gitsigns')
+gitsigns.setup()
 
-local opts = {silent = true, remap = false}
-vim.keymap.set('n', '<leader>hh', gs.preview_hunk, opts)
-vim.keymap.set('n', '<leader>hk', gs.prev_hunk, opts)
-vim.keymap.set('n', '<leader>hj', gs.next_hunk, opts)
+vim.keymap.set('n', '<leader>hh', gitsigns.preview_hunk, {})
+vim.keymap.set('n', '<leader>hk', gitsigns.prev_hunk, {})
+vim.keymap.set('n', '<leader>hj', gitsigns.next_hunk, {})
 
 
-vim.keymap.set('n', '<leader>hr', gs.reset_hunk, opts)
-vim.keymap.set('n', '<leader>hs', gs.stage_hunk, opts)
-vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, opts)
+vim.keymap.set('n', '<leader>hr', gitsigns.reset_hunk, {})
+vim.keymap.set('n', '<leader>hs', gitsigns.stage_hunk, {})
+vim.keymap.set('n', '<leader>hu', gitsigns.undo_stage_hunk, {})
 
-vim.keymap.set('n', '<leader>hhr', gs.reset_buffer, opts)
-vim.keymap.set('n', '<leader>hhs', gs.stage_buffer, opts)
+vim.keymap.set('n', '<leader>hhr', gitsigns.reset_buffer, {})
+vim.keymap.set('n', '<leader>hhs', gitsigns.stage_buffer, {})
 

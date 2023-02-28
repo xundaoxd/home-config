@@ -10,7 +10,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd('packadd packer.nvim')
 local packer = require('packer')
 packer.init({
     package_root = vim.fn.stdpath('config')..'/pack',
@@ -42,24 +42,17 @@ return packer.startup(function(use)
     }
     use {
         'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('indent_blankline').setup()
-        end
+        config = function() require('indent_blankline').setup() end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-        config = function()
-            require('plugins.nvim-treesitter')
-        end
+        run = ':TSUpdate',
+        config = function() require('plugins.nvim-treesitter') end
     }
     use {
         'morhetz/gruvbox',
         event = 'VimEnter',
-        config = function() vim.cmd[[colorscheme gruvbox]] end
+        config = function() vim.cmd([[colorscheme gruvbox]]) end
     }
 
     -- coding
@@ -74,7 +67,6 @@ return packer.startup(function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
-    use 'junegunn/vim-easy-align'
 
     -- auto cmp
     use {

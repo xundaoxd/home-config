@@ -1,6 +1,6 @@
 local lsp_setup = function(lsp, opts)
     local on_attach = function(client, bufnr)
-        local bufopts = { remap=false, silent=true, buffer=bufnr }
+        local bufopts = { buffer=bufnr }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
