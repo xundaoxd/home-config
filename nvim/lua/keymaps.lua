@@ -18,7 +18,7 @@ end
 for i=1,9,1 do
     vim.keymap.set('n', '<leader>'..i, switch_buf(i))
 end
-vim.keymap.set('n', '<leader>tc', hidden_current_buf)
+vim.keymap.set('n', '<leader>wc', hidden_current_buf)
 
 -- window
 vim.keymap.set('n', '<C-h>', '<C-w>h')
