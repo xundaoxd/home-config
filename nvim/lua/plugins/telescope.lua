@@ -1,4 +1,5 @@
-require('telescope').setup({
+local telescope = require('telescope')
+telescope.setup({
     extensions = {
         live_grep_args = {
             auto_quoting = true,
@@ -13,8 +14,8 @@ require('telescope').setup({
         }
     }
 })
-require('telescope').load_extension('live_grep_args')
-require('telescope').load_extension('ui-select')
+telescope.load_extension('live_grep_args')
+telescope.load_extension('ui-select')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files)

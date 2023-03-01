@@ -1,4 +1,5 @@
-require('diffview').setup({
+local diffview = require('diffview')
+diffview.setup({
     view = {
         default = {
             layout = 'diff2_horizontal',
