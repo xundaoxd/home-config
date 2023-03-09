@@ -74,7 +74,6 @@ return packer.startup(function(use)
         requires = {
             'L3MON4D3/LuaSnip',
             'rafamadriz/friendly-snippets',
-            'honza/vim-snippets'
         }
     }
     use {
@@ -89,12 +88,9 @@ return packer.startup(function(use)
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-calc',
             'saadparwaiz1/cmp_luasnip',
+            'ray-x/lsp_signature.nvim',
         },
         config = function() require('plugins.nvim-cmp') end
-    }
-    use {
-        'ray-x/lsp_signature.nvim',
-        config = function() require('plugins.lsp_signature') end
     }
     use {
         'liuchengxu/vista.vim',

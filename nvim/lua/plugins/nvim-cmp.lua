@@ -1,45 +1,41 @@
 local lsp_setup = function(lsp, opts)
-    local on_attach = function(client, bufnr)
-        local bufopts = { buffer=bufnr }
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    require('lspconfig')[lsp].setup({
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        on_attach = function(client, bufnr)
+            local opts = { buffer = bufnr }
+            vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
+            vim.keymap.set('n', 'gD', vim.lsp.buf.definition, opts)
+            vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
-        if vim.lsp.buf.format then
-            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, bufopts)
-        else
-            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.formatting() end, bufopts)
-        end
-    end
+            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
 
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local opts_ = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-    }
-    if opts ~= nil then
-        opts_ = vim.tbl_extend("force", opts_, opts)
-    end
-    require('lspconfig')[lsp].setup(opts_)
+            require('lsp_signature').on_attach({
+                bind = true,
+                handler_opts = {
+                    border = 'rounded'
+                },
+                padding = ' '
+            }, bufnr)
+        end,
+    })
 end
 
-vim.tbl_map(function(i)
-    lsp_setup(i, nil)
-end, {
-    'clangd', 'cmake', 'pyright',
-    'bashls', 'awk_ls', 'opencl_ls',
-    'dockerls', 'marksman', 'tsserver'
-})
+lsp_setup('clangd')
+lsp_setup('cmake')
+lsp_setup('pyright')
+lsp_setup('bashls')
+lsp_setup('awk_ls')
+lsp_setup('opencl_ls')
+lsp_setup('dockerls')
+lsp_setup('marksman')
+lsp_setup('tsserver')
 
-require('luasnip/loaders/from_vscode').lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
 
--- 'i' = insert mode
--- 'c' = command mode
--- 's' = select mode
 local cmp = require('cmp')
 cmp.setup({
     snippet = {
