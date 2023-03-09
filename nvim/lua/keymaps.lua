@@ -16,7 +16,7 @@ local function hidden_current_buf()
     end
 end
 for i=1,9,1 do
-    vim.keymap.set('n', string.format('<A-%s>', i), switch_buf(i))
+    vim.keymap.set({'n', 'v', 'i'}, string.format('<A-%s>', i), switch_buf(i))
 end
 vim.keymap.set('n', '<leader>wc', hidden_current_buf)
 
