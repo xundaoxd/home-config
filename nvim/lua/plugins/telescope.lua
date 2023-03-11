@@ -1,11 +1,21 @@
 local telescope = require('telescope')
+local actions = require('telescope.actions')
+
 telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                ['<C-j>'] = actions.preview_scrolling_down,
+                ['<C-k>'] = actions.preview_scrolling_up,
+            },
+        },
+    },
     extensions = {
         live_grep_args = {
             auto_quoting = true,
             mappings = {
                 i = {
-                    ['<C-k>'] = require('telescope-live-grep-args.actions').quote_prompt(),
+                    ['<C-l>'] = require('telescope-live-grep-args.actions').quote_prompt(),
                 }
             }
         },
