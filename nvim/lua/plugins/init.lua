@@ -25,7 +25,10 @@ return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- ui
-    use 'mhinz/vim-startify'
+    use {
+        'mhinz/vim-startify',
+        config = function() vim.g.startify_change_to_dir = 0 end
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
