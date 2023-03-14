@@ -8,8 +8,8 @@ local lsp_setup = function(lsp, opts)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
-            vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
-            vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
+            vim.keymap.set('n', 'rn', vim.lsp.buf.rename, opts)
+            vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, opts)
 
             vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
