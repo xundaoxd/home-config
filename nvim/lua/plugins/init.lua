@@ -77,6 +77,7 @@ return packer.startup(function(use)
         requires = {
             'L3MON4D3/LuaSnip',
             'rafamadriz/friendly-snippets',
+            'honza/vim-snippets',
         }
     }
     use {
