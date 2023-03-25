@@ -39,7 +39,7 @@ install_nvim() {
     mkdir -p ~/.local/bin
     ln -sf "$(which nvim)" ~/.local/bin/vim
 
-    echo 'export EDITOR="nvim"' >> ~/.xprofile
+    echo 'export EDITOR="nvim"' >> ~/.zshenv
 }
 
 install_ranger() {
