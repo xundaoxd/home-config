@@ -14,7 +14,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-[[ -d $HOME/.local/bin ]] && export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 EOF
 }
 
@@ -23,12 +23,6 @@ install_osh() {
 
     git clone https://gitee.com/mirrors/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-    cat >> ~/.zshrc << \EOF
-add_local() {
-    [ -d $1/bin ] && export PATH="$1/bin:$PATH"
-}
-EOF
 }
 
 install_nvim() {
@@ -40,7 +34,7 @@ install_nvim() {
     mkdir -p ~/.local/bin
     ln -sf "$(which nvim)" ~/.local/bin/vim
 
-    echo 'export EDITOR="nvim"' >> ~/.xprofile
+    echo 'export EDITOR="nvim"' >> ~/.zshrc
 }
 
 install_ranger() {
