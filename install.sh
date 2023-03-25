@@ -13,6 +13,8 @@ init() {
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+[[ -d $HOME/.local/bin ]] && export PATH="$HOME/.local/bin:$PATH"
 EOF
 }
 
@@ -26,7 +28,6 @@ install_osh() {
 add_local() {
     [ -d $1/bin ] && export PATH="$1/bin:$PATH"
 }
-add_local $HOME/.local
 EOF
 }
 
@@ -39,7 +40,7 @@ install_nvim() {
     mkdir -p ~/.local/bin
     ln -sf "$(which nvim)" ~/.local/bin/vim
 
-    echo 'export EDITOR="nvim"' >> ~/.zshenv
+    echo 'export EDITOR="nvim"' >> ~/.xprofile
 }
 
 install_ranger() {
