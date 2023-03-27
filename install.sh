@@ -39,10 +39,14 @@ install_nvim() {
 
 install_ranger() {
     mkdir -p ~/.config
-    ln -sf "$self_dir/ranger" ~/.config/
+    ln -sf "$self_dir"/ranger ~/.config/
 
     mkdir -p ~/.local/bin
     [ ! -e ~/.local/bin/ra ] && ln -s "$(which ranger)" ~/.local/bin/ra
+}
+
+install_bspwm() {
+    cp -r "$self_dir"/bspwm/* ~/.config/
 }
 
 main(){
@@ -50,6 +54,7 @@ main(){
     install_osh
     install_nvim
     install_ranger
+    install_bspwm
 }
 
 main
