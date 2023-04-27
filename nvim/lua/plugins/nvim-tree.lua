@@ -7,7 +7,6 @@ local function on_attach(bufnr)
 
     vim.keymap.del('n', '<BS>', { buffer = bufnr })
     vim.keymap.set('n', 'h',  api.node.navigate.parent_close, opts('Close Directory'))
-    vim.keymap.del('n', '<CR>', { buffer = bufnr })
     vim.keymap.set('n', 'l',  api.node.open.edit, opts('Open'))
 end
 
