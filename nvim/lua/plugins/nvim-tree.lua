@@ -11,10 +11,13 @@ local function on_attach(bufnr)
 end
 
 require("nvim-tree").setup({
-    on_attach = on_attach,
+    view = {
+        adaptive_size = true,
+    },
     update_focused_file = {
         enable = true,
     },
+    on_attach = on_attach,
 })
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', {})
 
