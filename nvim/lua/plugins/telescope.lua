@@ -1,5 +1,6 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local lga_actions = require('telescope-live-grep-args.actions')
 
 telescope.setup({
     defaults = {
@@ -15,7 +16,7 @@ telescope.setup({
             auto_quoting = true,
             mappings = {
                 i = {
-                    ['<C-l>'] = require('telescope-live-grep-args.actions').quote_prompt(),
+                    ['<C-l>'] = lga_actions.quote_prompt(),
                 }
             }
         },
@@ -24,8 +25,6 @@ telescope.setup({
         }
     }
 })
-telescope.load_extension('live_grep_args')
-telescope.load_extension('ui-select')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files)

@@ -52,13 +52,20 @@ return packer.startup(function(use)
         config = function() require('plugins.nvim-treesitter') end
     }
     use {
+        'lewis6991/gitsigns.nvim',
+        config = function() require('plugins.gitsigns') end
+    }
+    use {
+        'APZelos/blamer.nvim',
+        config = function() vim.g.blamer_enabled = 1 end
+    }
+    use {
         'morhetz/gruvbox',
         event = 'VimEnter',
         config = function() vim.cmd([[colorscheme gruvbox]]) end
     }
 
     -- coding
-    use 'terryma/vim-multiple-cursors'
     use 'terryma/vim-expand-region'
     use 'tpope/vim-surround'
     use {
@@ -72,14 +79,6 @@ return packer.startup(function(use)
 
     -- auto cmp
     use {
-        'saadparwaiz1/cmp_luasnip',
-        requires = {
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-            'honza/vim-snippets',
-        }
-    }
-    use {
         'hrsh7th/nvim-cmp',
         requires = {
             'neovim/nvim-lspconfig',
@@ -90,7 +89,14 @@ return packer.startup(function(use)
             'hrsh7th/cmp-emoji',
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-calc',
-            'saadparwaiz1/cmp_luasnip',
+            {
+                'saadparwaiz1/cmp_luasnip',
+                requires = {
+                    'L3MON4D3/LuaSnip',
+                    'rafamadriz/friendly-snippets',
+                    'honza/vim-snippets',
+                },
+            },
             'ray-x/lsp_signature.nvim',
         },
         config = function() require('plugins.nvim-cmp') end
@@ -114,14 +120,6 @@ return packer.startup(function(use)
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function() require('plugins.diffview') end
-    }
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function() require('plugins.gitsigns') end
-    }
-    use {
-        'APZelos/blamer.nvim',
-        config = function() vim.g.blamer_enabled = 1 end
     }
     use {
         'nvim-telescope/telescope.nvim',
