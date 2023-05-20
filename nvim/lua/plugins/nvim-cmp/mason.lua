@@ -11,3 +11,5 @@ local packages = {
 local mason_cmd = require('mason.api.command')
 vim.api.nvim_create_user_command("MasonInstallAll", function() mason_cmd.MasonInstall(packages) end, {})
 
+
+

@@ -97,6 +97,7 @@ return packer.startup(function(use)
                     'honza/vim-snippets',
                 },
             },
+            'williamboman/mason.nvim',
             'ray-x/lsp_signature.nvim',
         },
         config = function() require('plugins.nvim-cmp') end
@@ -107,10 +108,6 @@ return packer.startup(function(use)
     }
 
     -- misc
-    use {
-        'williamboman/mason.nvim',
-        config = function() require('plugins.mason') end
-    }
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
