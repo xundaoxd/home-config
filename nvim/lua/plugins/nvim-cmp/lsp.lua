@@ -1,6 +1,6 @@
 local lsp_setup = function(lsp, opts)
     require('lspconfig')[lsp].setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
             vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
@@ -15,7 +15,7 @@ local lsp_setup = function(lsp, opts)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-            vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
+            vim.keymap.set('n', 'fm', function() vim.lsp.buf.format({async = true}) end, opts)
 
             require('lsp_signature').on_attach({
                 bind = true,
