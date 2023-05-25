@@ -1,6 +1,8 @@
+local utils = require('utils')
+
 local lsp_setup = function(lsp, opts)
     require('lspconfig')[lsp].setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = require('cmp_nvim_lsp').default_capabilities(utils.merge_tables(vim.lsp.protocol.make_client_capabilities(), opts)),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
             vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)

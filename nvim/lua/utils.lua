@@ -1,5 +1,20 @@
 local M = {}
 
+function M.merge_tables(t1, t2)
+    local result = {}
+    if t1 ~= nil then
+        for k, v in pairs(t1) do
+            result[k] = v
+        end
+    end
+    if t2 ~= nil then
+        for k, v in pairs(t2) do
+            result[k] = v
+        end
+    end
+    return result
+end
+
 function M.valid_bufs()
     local bufs = vim.api.nvim_list_bufs()
     return vim.tbl_filter(function(buf)
