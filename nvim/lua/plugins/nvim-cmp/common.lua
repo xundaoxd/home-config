@@ -15,7 +15,7 @@ common.lsp_mason = {
     },
     {
         lsp = 'bashls',
-        mason = {'shellcheck'},
+        mason = {'bash-language-server', 'shellcheck'},
     },
     {
         lsp = 'awk_ls',
