@@ -1,4 +1,5 @@
 local utils = require('utils')
+local common = require('plugins.nvim-cmp.common')
 
 local lsp_setup = function(lsp, opts)
     require('lspconfig')[lsp].setup({
@@ -30,13 +31,7 @@ local lsp_setup = function(lsp, opts)
     })
 end
 
-lsp_setup('clangd')
-lsp_setup('cmake')
-lsp_setup('pyright')
-lsp_setup('bashls')
-lsp_setup('awk_ls')
-lsp_setup('opencl_ls')
-lsp_setup('dockerls')
-lsp_setup('marksman')
-lsp_setup('tsserver')
+for _, v in pairs(common.lsp_mason) do
+    lsp_setup(v.lsp)
+end
 
