@@ -2,8 +2,8 @@ local utils = require('utils')
 local common = require('plugins.nvim-cmp.common')
 
 local lsp_setup = function(lsp, opts)
-    require('lspconfig')[lsp].setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(utils.merge_tables(vim.lsp.protocol.make_client_capabilities(), opts)),
+    opts = utils.merge_tables({
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
             vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
@@ -28,10 +28,11 @@ local lsp_setup = function(lsp, opts)
                 padding = ' '
             }, bufnr)
         end,
-    })
+    }, opts)
+    require('lspconfig')[lsp].setup(opts)
 end
 
 for _, v in pairs(common.lsp_mason) do
-    lsp_setup(v.lsp)
+    lsp_setup(v.lsp, v.lsp_opts)
 end
 

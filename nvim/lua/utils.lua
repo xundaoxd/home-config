@@ -9,7 +9,11 @@ function M.merge_tables(t1, t2)
     end
     if t2 ~= nil then
         for k, v in pairs(t2) do
-            result[k] = v
+            if result[k] ~= nil and type(result[k]) == 'table' then
+                result[k] = M.merge_tables(result[k], v)
+            else
+                result[k] = v
+            end
         end
     end
     return result
