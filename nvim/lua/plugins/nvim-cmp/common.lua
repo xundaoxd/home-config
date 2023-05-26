@@ -41,29 +41,6 @@ common.lsp_mason = {
         lsp = 'tsserver',
         mason = {'typescript-language-server'},
     },
-    {
-        lsp = 'dotls',
-        mason = {'dot-language-server'},
-    },
-    {
-        lsp = 'vuels',
-        mason = {'vetur-vls'},
-    },
-    {
-        lsp = 'jsonls',
-        mason = {'json-lsp'},
-        lsp_opts = {
-            capabilities = {
-                textDocument = {
-                    completion = {
-                        completionItem = {
-                            snippetSupport = true
-                        },
-                    },
-                },
-            },
-        },
-    },
 }
 
 return common
