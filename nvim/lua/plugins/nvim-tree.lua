@@ -17,6 +17,9 @@ require("nvim-tree").setup({
     update_focused_file = {
         enable = true,
     },
+    live_filter = {
+        always_show_folders = false,
+    },
     on_attach = on_attach,
 })
 vim.keymap.set({ 'n', 'v', 'i' }, '<F2>', ':NvimTreeToggle<CR>', {})
