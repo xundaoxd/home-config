@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 self_path=$(realpath "${BASH_SOURCE[0]:-$0}")
 self_dir=$(dirname "$self_path")
@@ -49,13 +50,20 @@ install_bspwm() {
     cp -r "$self_dir"/bspwm/* ~/.config/
 }
 
+install_obsidian() {
+    [ -e ~/.local/bin/obsidian ] && die "obsidian installed, exited"
+    wget -qO ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
+    chmod +x ~/.local/bin/obsidian
+    mkdir -p ~/.local/bin/obsidian.config
+}
+
 main(){
     group="all"
     if (($# > 0)); then
         group="$*"
     fi
     if [[ $group == "all" ]]; then
-        group="osh nvim ranger bspwm"
+        group="osh nvim ranger bspwm obsidian"
     fi
     init
     for t in $group; do
