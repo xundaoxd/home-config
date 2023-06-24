@@ -50,12 +50,18 @@ install_bspwm() {
 }
 
 main(){
+    group="all"
+    if (($# > 0)); then
+        group="$*"
+    fi
+    if [[ $group == "all" ]]; then
+        group="osh nvim ranger bspwm"
+    fi
     init
-    install_osh
-    install_nvim
-    install_ranger
-    install_bspwm
+    for t in $group; do
+        install_$t
+    done
 }
 
-main
+main "$@"
 
