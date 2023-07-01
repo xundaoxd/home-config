@@ -53,7 +53,7 @@ install_bspwm() {
 
 install_obsidian() {
     [[ -e ~/.local/bin/obsidian ]] && die "obsidian installed, exit"
-    wget -qO ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
+    wget -O ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
     chmod +x ~/.local/bin/obsidian
     mkdir -p ~/.local/bin/obsidian.config
 }
