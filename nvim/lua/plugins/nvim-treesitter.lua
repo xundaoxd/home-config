@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup({
-    ensure_installed = {'cmake', 'c', 'cpp', 'cuda', 'markdown', 'llvm', 'vim', 'lua', 'dockerfile', 'gitignore', 'json', 'javascript'},
+    ensure_installed = {'cmake', 'c', 'cpp', 'cuda', 'markdown', 'llvm', 'vim', 'lua', 'dockerfile', 'gitignore', 'json', 'javascript', 'llvm'},
     highlight = {
         enable = true,
     },
