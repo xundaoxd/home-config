@@ -142,8 +142,8 @@ return packer.startup(function(use)
         config = function() require('plugins.vim-easymotion') end
     }
     use {
-        'voldikss/vim-floaterm',
-        config = function() require('plugins.vim-floaterm') end
+        'akinsho/toggleterm.nvim',
+        config = function() require('plugins.toggleterm') end
     }
     use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
