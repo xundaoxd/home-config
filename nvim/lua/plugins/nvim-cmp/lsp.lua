@@ -2,7 +2,7 @@ local utils = require('utils')
 local common = require('plugins.nvim-cmp.common')
 
 local lsp_setup = function(lsp, opts)
-    opts = utils.merge_tables({
+    opts = vim.tbl_deep_extend('force', {
         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
@@ -28,7 +28,7 @@ local lsp_setup = function(lsp, opts)
                 padding = ' '
             }, bufnr)
         end,
-    }, opts)
+    }, opts or {})
     require('lspconfig')[lsp].setup(opts)
 end
 
