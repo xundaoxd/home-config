@@ -4,6 +4,8 @@ set -e
 self_path=$(realpath "${BASH_SOURCE[0]:-$0}")
 self_dir=$(dirname "$self_path")
 
+opt_group='all'
+
 die() {
     echo "$0"
     exit 255
@@ -58,19 +60,10 @@ install_obsidian() {
     mkdir -p ~/.local/bin/obsidian.config
 }
 
-main(){
-    group="all"
-    if (($# > 0)); then
-        group="$*"
-    fi
-    if [[ $group == "all" ]]; then
-        group="osh nvim ranger bspwm obsidian"
-    fi
-    init
-    for t in $group; do
-        install_$t
-    done
-}
+(( $# > 0 )) && opt_group="$*"
+[[ $opt_group == "all" ]] && opt_group="osh nvim ranger bspwm obsidian"
 
-main "$@"
+for t in $opt_group; do
+    install_$t
+done
 
