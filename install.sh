@@ -30,6 +30,7 @@ install_osh() {
 }
 
 install_nvim() {
+    [[ $opt_force == y ]] && rm -rf ~/.config/nvim ~/.local/bin/vim
     [[ -e ~/.local/bin/vim ]] && return
 
     mkdir -p ~/.config
@@ -39,6 +40,7 @@ install_nvim() {
 }
 
 install_ranger() {
+    [[ $opt_force == y ]] && rm -rf ~/.config/ranger ~/.local/bin/ra
     [[ -e ~/.local/bin/ra ]] && return
 
     mkdir -p ~/.config
