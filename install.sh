@@ -48,6 +48,11 @@ install_ranger() {
 }
 
 install_bspwm() {
+    if [[ $opt_force == y ]]; then
+        for f in $(ls -A "$self_dir/bspwm"); do
+            rm -rf "$HOME/.config/$f"
+        done
+    fi
     [[ -e ~/.config/bspwm ]] && return
 
     for f in $(ls -A "$self_dir/bspwm"); do
