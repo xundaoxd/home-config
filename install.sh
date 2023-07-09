@@ -13,8 +13,9 @@ die() {
 }
 
 init() {
-    ln -sf -T "$self_dir/assets/profile" ~/.bash_profile
-    cp "$self_dir/assets/bashrc" ~/.bashrc
+    [[ $opt_force == y ]] && rm -rf ~/.{bashrc,bash_profile}
+    ln -s -T "$self_dir/assets/profile" ~/.bash_profile || true
+    [[ ! -e ~/.bashrc ]] && cp "$self_dir/assets/bashrc" ~/.bashrc
 }
 
 install_osh() {
@@ -47,9 +48,10 @@ install_ranger() {
 }
 
 install_bspwm() {
+    [[ -e ~/.config/bspwm ]] && return
+
     for f in $(ls -A "$self_dir/bspwm"); do
-        [[ $opt_force == y ]] && rm -rf "$HOME/.config/$f"
-        ln -sf -T "$self_dir/bspwm/$f" "$HOME/.config/$f" || true
+        ln -sf -T "$self_dir/bspwm/$f" "$HOME/.config/$f"
     done
 }
 
