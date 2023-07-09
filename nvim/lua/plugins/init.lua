@@ -48,10 +48,6 @@ return packer.startup(function(use)
         config = function() require('indent_blankline').setup() end
     }
     use {
-        'nvim-treesitter/nvim-treesitter',
-        config = function() require('plugins.nvim-treesitter') end
-    }
-    use {
         'lewis6991/gitsigns.nvim',
         config = function() require('plugins.gitsigns') end
     }
@@ -103,8 +99,12 @@ return packer.startup(function(use)
         config = function() require('plugins.nvim-cmp') end
     }
     use {
-        'liuchengxu/vista.vim',
-        config = function() require('plugins.vista') end
+        'nvim-treesitter/nvim-treesitter',
+        config = function() require('plugins.nvim-treesitter') end
+    }
+    use {
+        'simrat39/symbols-outline.nvim',
+        config = function() require('plugins.symbols-outline') end
     }
 
     -- misc
