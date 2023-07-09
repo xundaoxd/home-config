@@ -109,6 +109,11 @@ return packer.startup(function(use)
 
     -- misc
     use {
+        'folke/todo-comments.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function() require('todo-comments').setup() end
+    }
+    use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('plugins.nvim-tree') end
