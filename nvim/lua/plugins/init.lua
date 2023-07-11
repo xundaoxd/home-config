@@ -60,11 +60,6 @@ return packer.startup(function(use)
         event = 'VimEnter',
         config = function() vim.cmd([[colorscheme gruvbox]]) end
     }
-    use {
-        'nvim-treesitter/nvim-treesitter-context',
-        requires = 'nvim-treesitter/nvim-treesitter',
-        config = function() require'treesitter-context'.setup() end
-    }
 
     -- coding
     use 'terryma/vim-expand-region'
