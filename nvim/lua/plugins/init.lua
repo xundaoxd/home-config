@@ -75,12 +75,13 @@ return packer.startup(function(use)
 
     -- auto cmp
     use {
-        'hrsh7th/nvim-cmp',
+        'neovim/nvim-lspconfig',
         requires = {
-            'simrat39/symbols-outline.nvim',
-            'neovim/nvim-lspconfig',
+            'nvimdev/lspsaga.nvim',
+            'ray-x/lsp_signature.nvim',
+
+            'hrsh7th/nvim-cmp',
             'hrsh7th/cmp-nvim-lsp',
-            'onsails/lspkind.nvim',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-emoji',
@@ -94,8 +95,9 @@ return packer.startup(function(use)
                     'honza/vim-snippets',
                 },
             },
+            'onsails/lspkind.nvim',
+
             'williamboman/mason.nvim',
-            'ray-x/lsp_signature.nvim',
         },
         config = function() require('plugins.nvim-lsp') end
     }
