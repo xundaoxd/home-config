@@ -1,6 +1,6 @@
-local mason = require('mason')
-local common = require('plugins.nvim-cmp.common')
+local common = require('plugins.nvim-lsp.common')
 
+local mason = require('mason')
 mason.setup({
     install_root_dir = vim.fn.stdpath('config')..'/pack/mason'
 })

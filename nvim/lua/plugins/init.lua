@@ -77,6 +77,7 @@ return packer.startup(function(use)
     use {
         'hrsh7th/nvim-cmp',
         requires = {
+            'simrat39/symbols-outline.nvim',
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
             'onsails/lspkind.nvim',
@@ -96,15 +97,11 @@ return packer.startup(function(use)
             'williamboman/mason.nvim',
             'ray-x/lsp_signature.nvim',
         },
-        config = function() require('plugins.nvim-cmp') end
+        config = function() require('plugins.nvim-lsp') end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
         config = function() require('plugins.nvim-treesitter') end
-    }
-    use {
-        'simrat39/symbols-outline.nvim',
-        config = function() require('plugins.symbols-outline') end
     }
 
     -- misc

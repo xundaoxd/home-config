@@ -1,6 +1,6 @@
-local utils = require('utils')
-local common = require('plugins.nvim-cmp.common')
+local common = require('plugins.nvim-lsp.common')
 
+local lspconfig = require('lspconfig')
 local lsp_setup = function(lsp, opts)
     opts = vim.tbl_deep_extend('force', {
         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -29,10 +29,14 @@ local lsp_setup = function(lsp, opts)
             }, bufnr)
         end,
     }, opts or {})
-    require('lspconfig')[lsp].setup(opts)
+    lspconfig[lsp].setup(opts)
 end
 
 for _, v in pairs(common.lsp_mason) do
     lsp_setup(v.lsp, v.lsp_opts)
 end
+
+require('symbols-outline').setup()
+
+vim.keymap.set({ 'n', 'v', 'i' }, '<F3>', ':SymbolsOutline<CR>', {})
 
