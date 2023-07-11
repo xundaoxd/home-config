@@ -6,7 +6,6 @@ lspsaga.setup({
         enable = true
     },
 })
-vim.keymap.set({ 'n', 'v', 'i' }, '<F3>', ':Lspsaga outline<CR>', {})
 
 local lsp_signature = require('lsp_signature')
 local lspconfig = require('lspconfig')
@@ -23,6 +22,7 @@ local lsp_setup = function(lsp, opts)
             vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
             vim.keymap.set('n', '<leader>kk', ':Lspsaga hover_doc<CR>', opts)
+            vim.keymap.set({ 'n', 'v', 'i' }, '<F3>', ':Lspsaga outline<CR>', {opts})
 
             vim.keymap.set('n', '<leader>gl', ':Lspsaga show_buf_diagnostics<CR>', opts)
             vim.keymap.set('n', '<leader>[d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
