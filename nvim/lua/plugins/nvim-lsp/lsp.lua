@@ -22,10 +22,11 @@ local lsp_setup = function(lsp, opts)
 
             vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+            vim.keymap.set('n', '<leader>kk', ':Lspsaga hover_doc<CR>', opts)
 
-            vim.keymap.set('n', '<leader>gl', vim.diagnostic.open_float, opts)
-            vim.keymap.set('n', '<leader>[d', vim.diagnostic.goto_prev, opts)
-            vim.keymap.set('n', '<leader>]d', vim.diagnostic.goto_next, opts)
+            vim.keymap.set('n', '<leader>gl', ':Lspsaga show_buf_diagnostics<CR>', opts)
+            vim.keymap.set('n', '<leader>[d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
+            vim.keymap.set('n', '<leader>]d', ':Lspsaga diagnostic_jump_next<CR>', opts)
 
             vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
 
