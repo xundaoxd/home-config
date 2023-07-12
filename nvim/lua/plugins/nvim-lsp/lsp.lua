@@ -5,6 +5,18 @@ lspsaga.setup({
     symbol_in_winbar = {
         enable = true
     },
+    finder = {
+        keys = {
+            toggle_or_open = '<CR>',
+            quit = {'q', '<ESC>'},
+        },
+    },
+    diagnostic = {
+        keys = {
+            toggle_or_jump = '<CR>',
+            quit = {'q', '<ESC>'},
+        },
+    },
 })
 
 local lsp_signature = require('lsp_signature')
@@ -14,21 +26,15 @@ local lsp_setup = function(lsp, opts)
         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
-            vim.keymap.set('n', '<leader>gd', vim.lsp.buf.declaration, opts)
-            vim.keymap.set('n', '<leader>gD', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
-            vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
+            vim.keymap.set('n', '<leader>gd', ':Lspsaga finder def+ref+imp<CR>', opts)
 
             vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-            vim.keymap.set('n', '<leader>kk', ':Lspsaga hover_doc<CR>', opts)
-            vim.keymap.set({ 'n', 'v', 'i' }, '<F3>', ':Lspsaga outline<CR>', {opts})
-
-            vim.keymap.set('n', '<leader>gl', ':Lspsaga show_buf_diagnostics<CR>', opts)
-            vim.keymap.set('n', '<leader>[d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
-            vim.keymap.set('n', '<leader>]d', ':Lspsaga diagnostic_jump_next<CR>', opts)
-
             vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
+
+            vim.keymap.set('n', '<leader>sh', ':Lspsaga hover_doc<CR>', opts)
+            vim.keymap.set('n', '<leader>sd', ':Lspsaga show_buf_diagnostics<CR>', opts)
+            vim.keymap.set('n', '<F3>', ':Lspsaga outline<CR>', {opts})
 
             lsp_signature.on_attach({
                 bind = true,
