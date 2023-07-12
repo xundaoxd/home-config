@@ -2,7 +2,7 @@ require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'cmake', 'make', 'ninja',
         'c', 'cpp', 'cuda', 'python', 'lua', 'bash', 'javascript', 'java', 'html', 'css', 'tsx', 'vue',
-        'llvm', 'mlir', 'vim', 'dockerfile', 'gitignore', 'json', 'yaml',
+        'llvm', 'mlir', 'vim', 'dockerfile', 'gitignore', 'json', 'yaml', 'jsonnet',
         'markdown', 'markdown_inline', 'mermaid', 'dot',
     },
     highlight = {
