@@ -9,7 +9,7 @@ end
 local function hidden_current_buf()
     local valid_bufs = utils.valid_bufs()
     local buf_id = vim.api.nvim_get_current_buf()
-    for k, v in ipairs(valid_bufs) do
+    for k, v in pairs(valid_bufs) do
         if v == buf_id then
             utils.hidden_buf(k)
             if k > 0 and k == #valid_bufs then

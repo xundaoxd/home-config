@@ -50,6 +50,8 @@ lspsaga.setup({
         },
     },
     outline = {
+        win_width = 36,
+        close_after_jump = true,
         keys = {
             toggle_or_jump = '<CR>',
             quit = 'q',
