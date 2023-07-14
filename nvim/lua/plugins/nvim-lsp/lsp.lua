@@ -54,7 +54,7 @@ lspsaga.setup({
         close_after_jump = true,
         keys = {
             toggle_or_jump = '<CR>',
-            quit = 'q',
+            quit = {'q', '<ESC>'},
         },
     },
 })
