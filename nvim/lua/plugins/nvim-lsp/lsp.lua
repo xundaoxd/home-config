@@ -16,7 +16,6 @@ local lsp_setup = function(lsp_config)
 
                 vim.keymap.set('n', '<leader>sh', ':Lspsaga hover_doc<CR>', opts)
                 vim.keymap.set('n', '<leader>sd', ':Lspsaga show_buf_diagnostics<CR>', opts)
-                vim.keymap.set('n', '<F3>', ':Lspsaga outline<CR>', opts)
 
                 require('lsp_signature').on_attach({
                     bind = true,
@@ -58,4 +57,5 @@ lspsaga.setup({
         },
     },
 })
+vim.keymap.set('n', '<F3>', ':Lspsaga outline<CR>', {})
 
