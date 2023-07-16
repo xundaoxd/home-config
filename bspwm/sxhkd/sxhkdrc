@@ -19,7 +19,7 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -120,7 +120,7 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-super + q
+super + ctrl + q
     loginctl lock-session
 
 Print
