@@ -14,6 +14,10 @@ common.lsp_mason = {
         mason = {'pyright'},
     },
     {
+        lsp = 'pylsp',
+        mason = {'python-lsp-server'},
+    },
+    {
         lsp = 'bashls',
         mason = {'bash-language-server', 'shellcheck'},
     },
