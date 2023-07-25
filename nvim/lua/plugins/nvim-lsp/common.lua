@@ -38,10 +38,6 @@ common.lsp_mason = {
         mason = {'docker-compose-language-service'},
     },
     {
-        lsp = 'marksman',
-        mason = {'marksman'},
-    },
-    {
         lsp = 'tsserver',
         mason = {'typescript-language-server'},
     },
