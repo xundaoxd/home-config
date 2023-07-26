@@ -10,6 +10,15 @@ super + Escape
 super + alt + {q, r}
 	bspc {quit, wm -r}
 
+super + ctrl + q
+    loginctl lock-session
+
+Print
+    flameshot screen -p ~/Pictures
+
+shift + Print
+    flameshot gui
+
 #
 # open/close
 #
@@ -119,13 +128,3 @@ super + alt + shift + {h, j, k, l}
 # move a floating window
 super + {Left, Down, Up, Right}
 	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
-
-super + ctrl + q
-    loginctl lock-session
-
-Print
-    flameshot screen -p ~/Pictures
-
-shift + Print
-    flameshot gui
-
