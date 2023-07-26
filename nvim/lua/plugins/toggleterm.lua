@@ -1,4 +1,4 @@
 require('toggleterm').setup()
 
-vim.keymap.set('n', '<F5>', ':ToggleTerm<CR>', {})
+vim.keymap.set('n', '<F5>', '<cmd>ToggleTerm<CR>', {})
 

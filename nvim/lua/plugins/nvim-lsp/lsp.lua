@@ -8,14 +8,14 @@ local lsp_setup = function(lsp_config)
             capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
             on_attach = function(client, bufnr)
                 local opts = { buffer = bufnr }
-                vim.keymap.set('n', '<leader>gd', ':Lspsaga finder def+ref+imp<CR>', opts)
+                vim.keymap.set('n', '<leader>gd', '<cmd>Lspsaga finder def+ref+imp<CR>', opts)
 
-                vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
+                vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
                 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
                 vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
 
-                vim.keymap.set('n', '<leader>sh', ':Lspsaga hover_doc<CR>', opts)
-                vim.keymap.set('n', '<leader>sd', ':Lspsaga show_buf_diagnostics<CR>', opts)
+                vim.keymap.set('n', '<leader>sh', '<cmd>Lspsaga hover_doc<CR>', opts)
+                vim.keymap.set('n', '<leader>sd', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
 
                 require('lsp_signature').on_attach({
                     bind = true,
@@ -57,5 +57,5 @@ lspsaga.setup({
         },
     },
 })
-vim.keymap.set('n', '<F3>', ':Lspsaga outline<CR>', {})
+vim.keymap.set('n', '<F3>', '<cmd>Lspsaga outline<CR>', {})
 

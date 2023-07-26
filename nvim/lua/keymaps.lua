@@ -29,8 +29,8 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
-vim.keymap.set('n', '<leader>sp', ':split<CR>')
-vim.keymap.set('n', '<leader>vs', ':vs<CR>')
+vim.keymap.set('n', '<leader>sp', '<cmd>split<CR>')
+vim.keymap.set('n', '<leader>vs', '<cmd>vs<CR>')
 
 -- move
 vim.keymap.set('i', '<C-h>', '<left>')
@@ -60,10 +60,10 @@ vim.keymap.set('n', 'dL', 'd$')
 vim.keymap.set('n', 'dH', 'd0')
 
 -- exit
-vim.keymap.set('n', '<C-s>', ':w<CR>')
-vim.keymap.set('n', '<leader>qq', ':wqa!<CR>')
-vim.keymap.set('n', '<leader>qa', ':qa!<CR>')
-vim.keymap.set('n', '<leader>qw', ':q!<CR>')
+vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
+vim.keymap.set('n', '<leader>qq', '<cmd>wqa!<CR>')
+vim.keymap.set('n', '<leader>qa', '<cmd>qa!<CR>')
+vim.keymap.set('n', '<leader>qw', '<cmd>q!<CR>')
 
 -- misc
 vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>')
