@@ -1,28 +1,3 @@
-local utils = require('utils')
-
--- tab
-local function switch_buf(buf_idx)
-    return function()
-        utils.switch_buf(buf_idx)
-    end
-end
-local function hidden_current_buf()
-    local valid_bufs = utils.valid_bufs()
-    local buf_id = vim.api.nvim_get_current_buf()
-    for k, v in pairs(valid_bufs) do
-        if v == buf_id then
-            utils.hidden_buf(k)
-            if k > 0 and k == #valid_bufs then
-                utils.switch_buf(k - 1)
-            end
-        end
-    end
-end
-for i=1,9,1 do
-    vim.keymap.set({'n', 'v', 'i'}, string.format('<A-%s>', i), switch_buf(i))
-end
-vim.keymap.set('n', '<leader>wc', hidden_current_buf)
-
 -- window
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
