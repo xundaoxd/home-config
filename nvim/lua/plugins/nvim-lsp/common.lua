@@ -41,6 +41,17 @@ common.lsp_mason = {
         lsp = 'tsserver',
         mason = {'typescript-language-server'},
     },
+    {
+        lsp = 'jsonls',
+        mason = {'json-lsp'},
+        lsp_opts = {
+            capabilities = (function()
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities.textDocument.completion.completionItem.snippetSupport = true
+                return capabilities
+            end)()
+        },
+    },
 }
 
 return common
