@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-self_path=$(realpath "${BASH_SOURCE[0]:-$0}")
-self_dir=$(dirname "$self_path")
+self_path=$(realpath "${BASH_SOURCE[0]}")
+proj_dir=$(dirname "$self_path")
 
 opt_force=n
 opt_group='all'
@@ -14,8 +14,9 @@ die() {
 
 init() {
     [[ $opt_force == y ]] && rm -rf ~/.{bashrc,bash_profile}
-    ln -s -T "$self_dir/assets/profile" ~/.bash_profile || true
-    [[ ! -e ~/.bashrc ]] && cp "$self_dir/assets/bashrc" ~/.bashrc
+
+    [[ ! -e ~/.bash_profile ]] && ln -s -T "$proj_dir/assets/profile" ~/.bash_profile
+    [[ ! -e ~/.bashrc ]] && cp "$proj_dir/assets/bashrc" ~/.bashrc
 }
 
 install_osh() {
@@ -34,7 +35,7 @@ install_nvim() {
     [[ -e ~/.local/bin/vim ]] && return
 
     mkdir -p ~/.config
-    ln -sf -T "$self_dir/nvim" ~/.config/nvim
+    ln -sf -T "$proj_dir/nvim" ~/.config/nvim
     mkdir -p ~/.local/bin
     ln -sf -T "$(which nvim)" ~/.local/bin/vim
 }
@@ -44,21 +45,21 @@ install_ranger() {
     [[ -e ~/.local/bin/ra ]] && return
 
     mkdir -p ~/.config
-    ln -sf -T "$self_dir"/ranger ~/.config/ranger
+    ln -sf -T "$proj_dir"/ranger ~/.config/ranger
     mkdir -p ~/.local/bin
     ln -sf -T "$(which ranger)" ~/.local/bin/ra
 }
 
 install_bspwm() {
     if [[ $opt_force == y ]]; then
-        for f in $(ls -A "$self_dir/bspwm"); do
+        for f in "$proj_dir"/bspwm/*; do
             rm -rf "$HOME/.config/$f"
         done
     fi
     [[ -e ~/.config/bspwm ]] && return
 
-    for f in $(ls -A "$self_dir/bspwm"); do
-        ln -sf -T "$self_dir/bspwm/$f" "$HOME/.config/$f"
+    for f in "$proj_dir"/bspwm/*; do
+        ln -sf -T "$proj_dir/bspwm/$f" "$HOME/.config/$f"
     done
 }
 
@@ -80,10 +81,9 @@ done
 shift $((OPTIND - 1))
 
 (( $# > 0 )) && opt_group="$*"
-[[ $opt_group == "all" ]] && opt_group="osh nvim ranger bspwm obsidian"
+[[ $opt_group == "all" ]] && opt_group="init install_osh install_nvim install_ranger install_bspwm install_obsidian"
 
-init
 for t in $opt_group; do
-    install_$t
+    $t
 done
 
