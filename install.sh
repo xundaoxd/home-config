@@ -53,13 +53,13 @@ install_ranger() {
 install_bspwm() {
     if [[ $opt_force == y ]]; then
         for f in "$proj_dir"/bspwm/*; do
-            rm -rf "$HOME/.config/$f"
+            rm -rf "$HOME/.config/$(basename $f)"
         done
     fi
     [[ -e ~/.config/bspwm ]] && return
 
     for f in "$proj_dir"/bspwm/*; do
-        ln -sf -T "$proj_dir/bspwm/$f" "$HOME/.config/$f"
+        ln -sf -T "$f" "$HOME/.config/$(basename $f)"
     done
 }
 
