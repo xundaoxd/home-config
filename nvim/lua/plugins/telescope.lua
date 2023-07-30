@@ -1,6 +1,5 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
-local lga_actions = require('telescope-live-grep-args.actions')
 
 telescope.setup({
     defaults = {
@@ -12,23 +11,21 @@ telescope.setup({
         },
     },
     extensions = {
-        live_grep_args = {
-            auto_quoting = true,
-            mappings = {
-                i = {
-                    ['<C-l>'] = lga_actions.quote_prompt(),
-                }
-            }
+        fzf = {
+            fuzzy = true,                       -- false will only do exact matching
+            override_generic_sorter = true,     -- override the generic sorter
+            override_file_sorter = true,        -- override the file sorter
+            case_mode = "smart_case",           -- or "ignore_case" or "respect_case"
+                                                -- the default case_mode is "smart_case"
         },
-        ['ui-select'] = {
-            require('telescope.themes').get_dropdown()
-        }
     }
 })
+telescope.load_extension('fzf')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files)
-vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+vim.keymap.set('v', '<leader>fg', builtin.grep_string)
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find)
 vim.keymap.set('n', '<leader>ft', builtin.tags)
 
