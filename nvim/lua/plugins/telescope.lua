@@ -6,7 +6,7 @@ telescope.setup({
         mappings = {
             i = {
                 ['<esc>'] = actions.close,
-                ['<C-u>'] = actions.false,
+                ['<C-u>'] = false,
                 ['<C-j>'] = actions.preview_scrolling_down,
                 ['<C-k>'] = actions.preview_scrolling_up,
             },
