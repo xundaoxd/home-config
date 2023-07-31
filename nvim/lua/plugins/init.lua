@@ -26,8 +26,10 @@ return packer.startup(function(use)
 
     -- ui
     use {
-        'mhinz/vim-startify',
-        config = function() vim.g.startify_change_to_dir = 0 end
+        'glepnir/dashboard-nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        event = 'VimEnter',
+        config = function() require('plugins.dashboard-nvim') end
     }
     use {
         'nvim-lualine/lualine.nvim',
