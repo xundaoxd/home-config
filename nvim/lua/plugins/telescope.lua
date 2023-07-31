@@ -5,6 +5,8 @@ telescope.setup({
     defaults = {
         mappings = {
             i = {
+                ['<esc>'] = actions.close,
+                ['<C-u>'] = actions.false,
                 ['<C-j>'] = actions.preview_scrolling_down,
                 ['<C-k>'] = actions.preview_scrolling_up,
             },
@@ -22,10 +24,9 @@ telescope.setup({
 })
 telescope.load_extension('fzf')
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-vim.keymap.set('v', '<leader>fg', builtin.grep_string)
-vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find)
-vim.keymap.set('n', '<leader>ft', builtin.tags)
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
+vim.keymap.set('v', '<leader>fg', '<cmd>Telescope grep_string<CR>')
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
+vim.keymap.set('n', '<leader>ft', '<cmd>Telescope tags<CR>')
 
