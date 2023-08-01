@@ -78,7 +78,6 @@ return packer.startup(function(use)
     use {
         'neovim/nvim-lspconfig',
         requires = {
-            'nvimdev/lspsaga.nvim',
             'ray-x/lsp_signature.nvim',
 
             'hrsh7th/nvim-cmp',
