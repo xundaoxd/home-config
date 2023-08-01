@@ -79,6 +79,7 @@ return packer.startup(function(use)
         'neovim/nvim-lspconfig',
         requires = {
             'ray-x/lsp_signature.nvim',
+            'simrat39/symbols-outline.nvim',
 
             'hrsh7th/nvim-cmp',
             'hrsh7th/cmp-nvim-lsp',
