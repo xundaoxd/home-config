@@ -15,7 +15,7 @@ die() {
 init() {
     [[ $opt_force == y ]] && rm -rf ~/.{bashrc,bash_profile}
 
-    [[ ! -e ~/.bash_profile ]] && ln -s -T "$proj_dir/assets/profile" ~/.bash_profile
+    [[ ! -e ~/.bash_profile ]] && cp "$proj_dir/assets/profile" ~/.bash_profile
     [[ ! -e ~/.bashrc ]] && cp "$proj_dir/assets/bashrc" ~/.bashrc
 }
 
@@ -34,9 +34,8 @@ install_nvim() {
     [[ $opt_force == y ]] && rm -rf ~/.config/nvim ~/.local/bin/vim
     [[ -e ~/.local/bin/vim ]] && return
 
-    mkdir -p ~/.config
+    mkdir -p ~/.config ~/.local/bin
     ln -sf -T "$proj_dir/nvim" ~/.config/nvim
-    mkdir -p ~/.local/bin
     ln -sf -T "$(which nvim)" ~/.local/bin/vim
 }
 
@@ -44,27 +43,26 @@ install_ranger() {
     [[ $opt_force == y ]] && rm -rf ~/.config/ranger ~/.local/bin/ra
     [[ -e ~/.local/bin/ra ]] && return
 
-    mkdir -p ~/.config
+    mkdir -p ~/.config ~/.local/bin
     ln -sf -T "$proj_dir"/ranger ~/.config/ranger
-    mkdir -p ~/.local/bin
     ln -sf -T "$(which ranger)" ~/.local/bin/ra
 }
 
 install_bspwm() {
     if [[ $opt_force == y ]]; then
         for f in "$proj_dir"/bspwm/*; do
-            rm -rf "$HOME/.config/$(basename $f)"
+            rm -rf "$HOME/.config/$(basename "$f")"
         done
     fi
     [[ -e ~/.config/bspwm ]] && return
 
     for f in "$proj_dir"/bspwm/*; do
-        ln -sf -T "$f" "$HOME/.config/$(basename $f)"
+        ln -sf -T "$f" "$HOME/.config/$(basename "$f")"
     done
 }
 
 install_cmake() {
-    [[ $opt_force == y ]] && rm -rf ~/.software/cmake-3.26.5-linux-x86_64
+    [[ $opt_force == y ]] && rm -rf ~/.software/cmake-3.26.5-linux-x86_64 && sed -i -E '/add_local.*cmake/d' ~/.bashrc
     [[ -e ~/.software/cmake-3.26.5-linux-x86_64 ]] && return
 
     mkdir -p ~/.software
@@ -75,7 +73,7 @@ install_cmake() {
 }
 
 install_nodejs() {
-    [[ $opt_force == y ]] && rm -rf ~/.software/node-v18.17.0-linux-x64
+    [[ $opt_force == y ]] && rm -rf ~/.software/node-v18.17.0-linux-x64 && sed -i -E '/add_local.*node/d' ~/.bashrc
     [[ -e ~/.software/node-v18.17.0-linux-x64 ]] && return
 
     mkdir -p ~/.software
