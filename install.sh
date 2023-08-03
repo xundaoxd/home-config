@@ -86,7 +86,7 @@ install_obsidian() {
     [[ $opt_force == y ]] && rm -rf ~/.local/bin/obsidian{,.config}
     [[ -e ~/.local/bin/obsidian ]] && return
 
-    wget -O ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage
+    wget -O ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.7/Obsidian-1.3.7.AppImage
     chmod +x ~/.local/bin/obsidian
     mkdir -p ~/.local/bin/obsidian.config
 }
