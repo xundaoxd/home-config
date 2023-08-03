@@ -1,48 +1,52 @@
--- window
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+local opts = {
+    noremap = true,
+}
 
-vim.keymap.set('n', '<leader>sp', '<cmd>split<CR>')
-vim.keymap.set('n', '<leader>vs', '<cmd>vs<CR>')
+-- window
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
+
+vim.keymap.set('n', '<leader>sp', '<C-w>s', opts)
+vim.keymap.set('n', '<leader>vs', '<C-w>v', opts)
 
 -- move
-vim.keymap.set('i', '<C-h>', '<left>')
-vim.keymap.set('i', '<C-j>', '<down>')
-vim.keymap.set('i', '<C-k>', '<up>')
-vim.keymap.set('i', '<C-l>', '<right>')
+vim.keymap.set('i', '<C-h>', '<left>', opts)
+vim.keymap.set('i', '<C-j>', '<down>', opts)
+vim.keymap.set('i', '<C-k>', '<up>', opts)
+vim.keymap.set('i', '<C-l>', '<right>', opts)
 
-vim.keymap.set({'n', 'v'}, 'H', '^')
-vim.keymap.set({'n', 'v'}, 'L', '$')
-vim.keymap.set({'n', 'v'}, 'J', '10j')
-vim.keymap.set({'n', 'v'}, 'K', '10k')
-vim.keymap.set({'n', 'v'}, 'W', 'b')
-vim.keymap.set({'n', 'v'}, 'E', 'ge')
+vim.keymap.set({'n', 'v'}, 'H', '^', opts)
+vim.keymap.set({'n', 'v'}, 'L', '$', opts)
+vim.keymap.set({'n', 'v'}, 'J', '10j', opts)
+vim.keymap.set({'n', 'v'}, 'K', '10k', opts)
+vim.keymap.set({'n', 'v'}, 'W', 'b', opts)
+vim.keymap.set({'n', 'v'}, 'E', 'ge', opts)
 
 -- copy, cut, delete
-vim.keymap.set('v', '<leader>x', '"+x')
-vim.keymap.set('v', '<leader>d', '"+d')
-vim.keymap.set('n', '<leader>dd', '"+dd')
-vim.keymap.set('n', '<leader>dw', '"+dw')
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>yy', '"+yy')
-vim.keymap.set('n', '<leader>yw', 'viw"+y')
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('n', '<leader>P', '"+P')
+vim.keymap.set('v', '<leader>x', '"+x', opts)
+vim.keymap.set('v', '<leader>d', '"+d', opts)
+vim.keymap.set('n', '<leader>dd', '"+dd', opts)
+vim.keymap.set('n', '<leader>dw', '"+dw', opts)
+vim.keymap.set('v', '<leader>y', '"+y', opts)
+vim.keymap.set('n', '<leader>yy', '"+yy', opts)
+vim.keymap.set('n', '<leader>yw', 'viw"+y', opts)
+vim.keymap.set('n', '<leader>p', '"+p', opts)
+vim.keymap.set('n', '<leader>P', '"+P', opts)
 
-vim.keymap.set('n', 'dL', 'd$')
-vim.keymap.set('n', 'dH', 'd0')
+vim.keymap.set('n', 'dl', 'd$', opts)
+vim.keymap.set('n', 'dh', 'd0', opts)
 
 -- exit
-vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
-vim.keymap.set('n', '<leader>qq', '<cmd>wqa!<CR>')
-vim.keymap.set('n', '<leader>qa', '<cmd>qa!<CR>')
-vim.keymap.set('n', '<leader>qw', '<cmd>q!<CR>')
+vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', opts)
+vim.keymap.set('n', '<leader>qq', '<cmd>wqa!<CR>', opts)
+vim.keymap.set('n', '<leader>qa', '<cmd>qa!<CR>', opts)
+vim.keymap.set('n', '<leader>qw', '<cmd>q!<CR>', opts)
 
 -- misc
-vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>')
-vim.keymap.set({'n', 'v', 'i'}, '<down>', '<nop>')
-vim.keymap.set({'n', 'v', 'i'}, '<left>', '<nop>')
-vim.keymap.set({'n', 'v', 'i'}, '<right>', '<nop>')
+vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>', opts)
+vim.keymap.set({'n', 'v', 'i'}, '<down>', '<nop>', opts)
+vim.keymap.set({'n', 'v', 'i'}, '<left>', '<nop>', opts)
+vim.keymap.set({'n', 'v', 'i'}, '<right>', '<nop>', opts)
 

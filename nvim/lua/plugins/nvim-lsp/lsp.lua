@@ -32,5 +32,5 @@ end
 lsp_setup(common.lsp_mason)
 
 require('symbols-outline').setup()
-vim.keymap.set({'n', 'v', 'i'}, '<F3>', '<cmd>SymbolsOutline<CR>', {})
+vim.keymap.set({'n', 'v', 'i'}, '<F3>', '<cmd>SymbolsOutline<CR>')
 
