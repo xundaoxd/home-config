@@ -15,7 +15,7 @@ local lsp_setup = function(lsp_config)
                 vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format({async = true}) end, opts)
 
                 vim.keymap.set('n', '<leader>sh', vim.lsp.buf.hover, opts)
-                vim.keymap.set('n', '<leader>sd', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
+                -- vim.keymap.set('n', '<leader>sd', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
 
                 require('lsp_signature').on_attach({
                     bind = true,
