@@ -13,8 +13,9 @@ die() {
 }
 
 init() {
-    [[ $opt_force == y ]] && rm -rf ~/.bashrc
+    [[ $opt_force == y ]] && rm -rf ~/.bashrc ~/.zprofile
     [[ ! -e ~/.bashrc ]] && cp "$proj_dir/assets/bashrc" ~/.bashrc
+    [[ ! -e ~/.zprofile ]] && cp "$proj_dir/assets/zprofile" ~/.zprofile
 }
 
 install_osh() {
