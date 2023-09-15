@@ -13,9 +13,7 @@ die() {
 }
 
 init() {
-    [[ $opt_force == y ]] && rm -rf ~/.{bashrc,bash_profile}
-
-    [[ ! -e ~/.bash_profile ]] && cp "$proj_dir/assets/profile" ~/.bash_profile
+    [[ $opt_force == y ]] && rm -rf ~/.bashrc
     [[ ! -e ~/.bashrc ]] && cp "$proj_dir/assets/bashrc" ~/.bashrc
 }
 
@@ -26,8 +24,8 @@ install_osh() {
     git clone https://gitee.com/mirrors/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-    echo '.     ~/.bash_profile' >> ~/.zprofile
-    echo '.     ~/.bashrc' >> ~/.zshrc
+    [[ -e ~/.bash_profile ]] && echo '.     ~/.bash_profile' >> ~/.zprofile
+    [[ -e ~/.bashrc ]] && echo '.     ~/.bashrc' >> ~/.zshrc
 }
 
 install_nvim() {
