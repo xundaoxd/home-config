@@ -59,24 +59,24 @@ install_bspwm() {
 }
 
 install_cmake() {
-    [[ $opt_force == y ]] && rm -rf ~/.software/cmake-3.26.5-linux-x86_64 && sed -i -E '/add_local.*cmake/d' ~/.bashrc
+    [[ $opt_force == y ]] && rm -rf ~/.software/cmake-3.26.5-linux-x86_64 && sed -i -E '/add_local.*cmake/d' ~/.zshrc
     [[ -e ~/.software/cmake-3.26.5-linux-x86_64 ]] && return
 
     mkdir -p ~/.software
     wget -O - https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-x86_64.tar.gz \
         | tar -C ~/.software -xz
-    echo 'add_local "$HOME/.software/cmake-3.26.5-linux-x86_64"' >> ~/.bashrc
+    echo 'add_local "$HOME/.software/cmake-3.26.5-linux-x86_64"' >> ~/.zshrc
 
 }
 
 install_nodejs() {
-    [[ $opt_force == y ]] && rm -rf ~/.software/node-v18.17.0-linux-x64 && sed -i -E '/add_local.*node/d' ~/.bashrc
+    [[ $opt_force == y ]] && rm -rf ~/.software/node-v18.17.0-linux-x64 && sed -i -E '/add_local.*node/d' ~/.zshrc
     [[ -e ~/.software/node-v18.17.0-linux-x64 ]] && return
 
     mkdir -p ~/.software
     wget -O - https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz \
         | tar -C ~/.software -xJ
-    echo 'add_local "$HOME/.software/node-v18.17.0-linux-x64"' >> ~/.bashrc
+    echo 'add_local "$HOME/.software/node-v18.17.0-linux-x64"' >> ~/.zshrc
 }
 
 while getopts 'f' name; do
