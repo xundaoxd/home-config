@@ -79,15 +79,6 @@ install_nodejs() {
     echo 'add_local "$HOME/.software/node-v18.17.0-linux-x64"' >> ~/.bashrc
 }
 
-install_obsidian() {
-    [[ $opt_force == y ]] && rm -rf ~/.local/bin/obsidian{,.config}
-    [[ -e ~/.local/bin/obsidian ]] && return
-
-    wget -O ~/.local/bin/obsidian https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.7/Obsidian-1.3.7.AppImage
-    chmod +x ~/.local/bin/obsidian
-    mkdir -p ~/.local/bin/obsidian.config
-}
-
 while getopts 'f' name; do
     case $name in
         f)  opt_force=y;;
@@ -97,7 +88,7 @@ done
 shift $((OPTIND - 1))
 
 (( $# > 0 )) && opt_group="$*"
-[[ $opt_group == "all" ]] && opt_group="init install_osh install_nvim install_ranger install_bspwm install_obsidian install_cmake install_nodejs"
+[[ $opt_group == "all" ]] && opt_group="init install_osh install_nvim install_ranger install_bspwm install_cmake install_nodejs"
 
 for t in $opt_group; do
     $t
