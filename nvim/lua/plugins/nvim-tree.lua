@@ -6,8 +6,6 @@ local function on_attach(bufnr)
 
     vim.keymap.set('n', 'h',     api.node.navigate.parent_close,    opts('Close Directory'))
     vim.keymap.set('n', 'l',     api.node.open.edit,                opts('Open'))
-    vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close,    opts('Close Directory'))
-    vim.keymap.set('n', '<CR>',  api.node.open.edit,                opts('Open'))
 
     vim.keymap.set('n', 'L',     api.tree.expand_all,               opts('Expand All'))
     vim.keymap.set('n', 'H',     api.tree.collapse_all,             opts('Collapse All'))
@@ -36,6 +34,11 @@ require("nvim-tree").setup({
         width = {
             max = 50,
         },
+    },
+    ui = {
+        confirm = {
+            remove = false
+        }
     },
     update_focused_file = {
         enable = true,
