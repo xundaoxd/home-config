@@ -1,5 +1,3 @@
-[[ -f ~/.bashrc ]] && .     ~/.bashrc
-
 export EDITOR="nvim"
 
 add_local() {
