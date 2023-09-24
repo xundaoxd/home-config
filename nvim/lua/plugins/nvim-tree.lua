@@ -3,6 +3,7 @@ local function on_attach(bufnr)
         return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
     local api = require("nvim-tree.api")
+    vim.keymap.set('n', '<esc>', '<nop>', opts('Disable esc'))
 
     vim.keymap.set('n', 'h',     api.node.navigate.parent_close,    opts('Close Directory'))
     vim.keymap.set('n', 'l',     api.node.open.edit,                opts('Open'))
