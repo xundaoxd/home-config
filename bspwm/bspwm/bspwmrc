@@ -15,7 +15,6 @@ bspc config borderless_monocle    false
 bspc config gapless_monocle       false
 bspc config focus_follows_pointer true
 
-bspc rule -a sxiv   state=floating
 bspc rule -a vlc    state=floating
-bspc rule -a okular state=floating
+bspc rule -a evince state=floating
 
