@@ -41,10 +41,6 @@ return packer.startup(function(use)
         config = function() require('plugins.bufferline') end
     }
     use {
-        'luochen1990/rainbow',
-        config = function() vim.g.rainbow_active = 1 end
-    }
-    use {
         'lukas-reineke/indent-blankline.nvim',
         config = function() require('indent_blankline').setup() end
     }
@@ -69,10 +65,6 @@ return packer.startup(function(use)
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require('nvim-autopairs').setup() end
-    }
 
     -- auto cmp
     use {
@@ -80,6 +72,8 @@ return packer.startup(function(use)
         requires = {
             'ray-x/lsp_signature.nvim',
             'simrat39/symbols-outline.nvim',
+            'onsails/lspkind.nvim',
+            'williamboman/mason.nvim',
 
             'hrsh7th/nvim-cmp',
             'hrsh7th/cmp-nvim-lsp',
@@ -96,9 +90,6 @@ return packer.startup(function(use)
                     'honza/vim-snippets',
                 },
             },
-            'onsails/lspkind.nvim',
-
-            'williamboman/mason.nvim',
         },
         config = function() require('plugins.nvim-lsp') end
     }
@@ -143,7 +134,6 @@ return packer.startup(function(use)
         'akinsho/toggleterm.nvim',
         config = function() require('plugins.toggleterm') end
     }
-    use 'lewis6991/impatient.nvim'
     if packer_bootstrap then
         packer.sync()
     end
