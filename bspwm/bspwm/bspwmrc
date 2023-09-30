@@ -16,5 +16,4 @@ bspc config gapless_monocle       false
 bspc config focus_follows_pointer true
 
 bspc rule -a vlc    state=floating
-bspc rule -a evince state=floating
 
