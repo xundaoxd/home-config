@@ -42,7 +42,7 @@ return packer.startup(function(use)
     }
     use {
         'lukas-reineke/indent-blankline.nvim',
-        config = function() require('indent_blankline').setup() end
+        config = function() require('ibl').setup() end
     }
     use {
         'lewis6991/gitsigns.nvim',
