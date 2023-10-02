@@ -65,6 +65,10 @@ return packer.startup(function(use)
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup() end
+    }
 
     -- auto cmp
     use {
