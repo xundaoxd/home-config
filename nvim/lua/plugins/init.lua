@@ -74,7 +74,6 @@ return packer.startup(function(use)
     use {
         'neovim/nvim-lspconfig',
         requires = {
-            'ray-x/lsp_signature.nvim',
             'simrat39/symbols-outline.nvim',
             'onsails/lspkind.nvim',
             'williamboman/mason.nvim',
