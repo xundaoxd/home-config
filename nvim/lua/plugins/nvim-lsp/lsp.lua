@@ -13,8 +13,8 @@ local lsp_setup = function(lsp_config)
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
-                vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, opts)
-                vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.hover, opts)
+                vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help, opts)
+                vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.hover, opts)
 
                 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
                 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
