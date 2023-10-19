@@ -1,7 +1,12 @@
 local bufferline = require('bufferline')
 local commands = require('bufferline.commands')
 
-bufferline.setup()
+bufferline.setup({
+    options = {
+        mode = 'buffers',
+        numbers = 'ordinal',
+    }
+})
 
 for i=1,9,1 do
     vim.keymap.set({'n', 'v', 'i'}, string.format('<A-%s>', i), string.format('<cmd>BufferLineGoToBuffer %s<CR>', i))
