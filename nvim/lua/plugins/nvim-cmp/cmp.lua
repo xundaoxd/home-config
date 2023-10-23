@@ -38,11 +38,11 @@ cmp.setup({
         })
     },
     sources = cmp.config.sources({
-        { name = 'buffer' },
-        { name = 'luasnip' },
         { name = 'path' },
-        { name = 'calc' },
+        { name = 'buffer' },
         { name = 'emoji' },
+        { name = 'calc' },
+        { name = 'luasnip' },
         { name = 'nvim_lsp' },
     }),
 })
