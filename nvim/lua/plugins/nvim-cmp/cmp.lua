@@ -16,18 +16,7 @@ cmp.setup({
         ['<C-k>'] = cmp.mapping.scroll_docs(-4),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                local e = cmp.get_selected_entry()
-                if e == nil or vim.tbl_isempty(e) then
-                    cmp.close()
-                else
-                    cmp.confirm()
-                end
-            else
-                fallback()
-            end
-        end),
+        ['<CR>'] = cmp.mapping.confirm(),
     }),
     formatting = {
         fields = { "kind", "abbr", "menu" },
