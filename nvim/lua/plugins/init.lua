@@ -72,14 +72,8 @@ return packer.startup(function(use)
 
     -- auto cmp
     use {
-        'neovim/nvim-lspconfig',
+        'hrsh7th/nvim-cmp',
         requires = {
-            'simrat39/symbols-outline.nvim',
-            'onsails/lspkind.nvim',
-            'williamboman/mason.nvim',
-
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-emoji',
@@ -93,8 +87,17 @@ return packer.startup(function(use)
                     'honza/vim-snippets',
                 },
             },
+            {
+                'hrsh7th/cmp-nvim-lsp',
+                requires = {
+                    'onsails/lspkind.nvim',
+                    'neovim/nvim-lspconfig',
+                    'simrat39/symbols-outline.nvim',
+                    'williamboman/mason.nvim',
+                },
+            },
         },
-        config = function() require('plugins.nvim-lsp') end
+        config = function() require('plugins.nvim-cmp') end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
