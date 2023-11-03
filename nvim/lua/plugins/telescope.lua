@@ -30,10 +30,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>ft', builtin.tags, {})
 
-vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
-vim.keymap.set('n', '<leader>gD', builtin.lsp_type_definitions, {})
-vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
-
 vim.keymap.set('n', '<leader>gs', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>gws', builtin.lsp_workspace_symbols, {})
 
