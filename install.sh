@@ -13,9 +13,10 @@ die() {
 
 init() {
     [[ $opt_force == y ]] && rm -rf ~/.zshrc ~/.zprofile
+    [[ -e ~/.zshrc ]] && return
 
-    [[ ! -e ~/.zshrc ]] && cp "$self_dir/homefs/.zshrc" ~/.zshrc
-    [[ ! -e ~/.zprofile ]] && cp "$self_dir/homefs/.zprofile" ~/.zprofile
+    cp $self_dir/homefs/.zshrc ~/.zshrc
+    cp $self_dir/homefs/.zprofile ~/.zprofile
 }
 
 install_osh() {
@@ -24,7 +25,7 @@ install_osh() {
 
     git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    cat "$self_dir/homefs/.zshrc" >> ~/.zshrc
+    cat $self_dir/homefs/.zshrc >> ~/.zshrc
 }
 
 install_nvim() {
@@ -32,8 +33,8 @@ install_nvim() {
     [[ -e ~/.local/bin/vim ]] && return
 
     mkdir -p ~/.config ~/.local/bin
-    ln -sf -T "$self_dir/homefs/.config/nvim" ~/.config/nvim
-    ln -sf -T "$(which nvim)" ~/.local/bin/vim
+    ln -sf -T $self_dir/homefs/.config/nvim ~/.config/nvim
+    ln -sf -T $(which nvim) ~/.local/bin/vim
 }
 
 install_ranger() {
@@ -41,8 +42,8 @@ install_ranger() {
     [[ -e ~/.local/bin/ra ]] && return
 
     mkdir -p ~/.config ~/.local/bin
-    ln -sf -T "$self_dir/homefs/.config/ranger" ~/.config/ranger
-    ln -sf -T "$(which ranger)" ~/.local/bin/ra
+    ln -sf -T $self_dir/homefs/.config/ranger ~/.config/ranger
+    ln -sf -T $(which ranger) ~/.local/bin/ra
 }
 
 install_bspwm() {
@@ -50,7 +51,7 @@ install_bspwm() {
     [[ -e ~/.config/bspwm ]] && return
 
     for t in alacritty bspwm polybar sxhkd; do
-        ln -sf -T "${self_dir}/homefs/.config/${t}" ~/.config
+        ln -sf -T $self_dir/homefs/.config/$t ~/.config/$t
     done
 }
 
