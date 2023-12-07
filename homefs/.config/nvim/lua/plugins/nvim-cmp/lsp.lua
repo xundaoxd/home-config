@@ -72,13 +72,6 @@ local lsp_setup = function(lsp_config)
         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = function(client, bufnr)
             local opts = { buffer = bufnr }
-
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-
-            vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.hover, opts)
             vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help, opts)
 
             vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -109,5 +102,5 @@ vim.api.nvim_create_user_command("MasonInstallAll", function() foreachi(lsp_conf
 
 -- symbols
 require('symbols-outline').setup()
-vim.keymap.set('n', '<leader>sm', '<cmd>SymbolsOutline<CR>')
+vim.keymap.set('n', 'sm', '<cmd>SymbolsOutline<CR>')
 

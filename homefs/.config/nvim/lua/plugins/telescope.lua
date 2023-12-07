@@ -3,16 +3,6 @@ local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 
 telescope.setup({
-    defaults = {
-        mappings = {
-            i = {
-                ['<esc>'] = actions.close,
-                ['<C-u>'] = false,
-                ['<C-j>'] = actions.preview_scrolling_down,
-                ['<C-k>'] = actions.preview_scrolling_up,
-            },
-        },
-    },
     extensions = {
         fzf = {
             fuzzy = true,                       -- false will only do exact matching
@@ -30,6 +20,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>ft', builtin.tags, {})
 
-vim.keymap.set('n', '<leader>gs', builtin.lsp_document_symbols, {})
-vim.keymap.set('n', '<leader>gws', builtin.lsp_workspace_symbols, {})
+vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
 
