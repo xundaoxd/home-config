@@ -10,7 +10,7 @@ diffview.setup({
     }
 })
 
-vim.keymap.set('n', '<leader>dfo', '<cmd>DiffviewOpen<CR>')
-vim.keymap.set('n', '<leader>dfc', '<cmd>DiffviewClose<CR>')
-vim.keymap.set('n', '<leader>dfh', '<cmd>DiffviewFileHistory<CR>')
+vim.keymap.set('n', 'dfo', '<cmd>DiffviewOpen<CR>')
+vim.keymap.set('n', 'dfc', '<cmd>DiffviewClose<CR>')
+vim.keymap.set('n', 'dfh', '<cmd>DiffviewFileHistory<CR>')
 
