@@ -77,10 +77,11 @@ install_nodejs() {
 }
 
 install_ssh() {
-    [[ $opt_force == y ]] && rm -rf ~/.ssh
-    [[ -e ~/.ssh ]] && return
+    [[ $opt_force == y ]] && rm -rf ~/.ssh/config
+    [[ -e ~/.ssh/config ]] && return
 
-    cp -r $self_dir/homefs/.ssh ~/
+    mkdir -p ~/.ssh
+    cp -r $self_dir/homefs/.ssh/config ~/.ssh/
 }
 
 while getopts 'f' name; do
