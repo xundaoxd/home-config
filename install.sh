@@ -76,6 +76,13 @@ install_nodejs() {
     echo 'add_local "$HOME/.software/node-v18.17.0-linux-x64"' >> ~/.zshrc
 }
 
+install_ssh() {
+    [[ $opt_force == y ]] && rm -rf ~/.ssh
+    [[ -e ~/.ssh ]] && return
+
+    cp -r $self_dir/homefs/.ssh ~/
+}
+
 while getopts 'f' name; do
     case $name in
         f)  opt_force=y;;
@@ -85,7 +92,7 @@ done
 shift $((OPTIND - 1))
 
 (( $# > 0 )) && opt_group="$*"
-[[ $opt_group == "all" ]] && opt_group="init install_osh install_nvim install_ranger install_bspwm install_cmake install_nodejs"
+[[ $opt_group == "all" ]] && opt_group="init install_osh install_nvim install_ranger install_bspwm install_cmake install_nodejs install_ssh"
 
 for t in $opt_group; do
     $t
