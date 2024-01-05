@@ -23,6 +23,15 @@ require('cokeline').setup({
                 return buffer.is_hovered and not buffer.is_focused
             end
         },
+    },
+    sidebar = {
+        filetype = {'NvimTree'},
+        components = {
+            {
+                text = function(buf) return buf.filetype end,
+                blod = true,
+            }
+        }
     }
 })
 
