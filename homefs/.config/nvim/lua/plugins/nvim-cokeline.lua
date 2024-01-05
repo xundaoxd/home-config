@@ -1,4 +1,5 @@
 local hlgroups = require('cokeline.hlgroups')
+local mappings = require('cokeline.mappings')
 
 require('cokeline').setup({
     default_hl = {
@@ -46,4 +47,7 @@ vim.keymap.set({'n', 'v', 'i'}, '<A-l>', '<Plug>(cokeline-focus-next)')
 
 vim.keymap.set({'n', 'v', 'i'}, '<A-H>', '<Plug>(cokeline-switch-prev)')
 vim.keymap.set({'n', 'v', 'i'}, '<A-L>', '<Plug>(cokeline-switch-next)')
+
+vim.keymap.set({'n', 'v', 'i'}, '<A-K>', function() mappings.by_step('close', 1) end)
+vim.keymap.set({'n', 'v', 'i'}, '<A-J>', function() mappings.by_step('close', -1) end)
 
