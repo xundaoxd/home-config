@@ -35,10 +35,12 @@ return packer.startup(function(use)
         config = function() require('plugins.lualine') end
     }
     use {
-        'akinsho/bufferline.nvim',
-        tag = '*',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.bufferline') end
+        'willothy/nvim-cokeline',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'kyazdani42/nvim-web-devicons',
+        },
+        config = function() require('plugins.nvim-cokeline') end
     }
     use {
         'lukas-reineke/indent-blankline.nvim',
