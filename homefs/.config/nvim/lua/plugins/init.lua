@@ -99,10 +99,6 @@ return packer.startup(function(use)
         },
         config = function() require('plugins.nvim-cmp') end
     }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        config = function() require('plugins.nvim-treesitter') end
-    }
 
     -- misc
     use {
