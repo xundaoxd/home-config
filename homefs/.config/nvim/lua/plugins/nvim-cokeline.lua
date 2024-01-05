@@ -11,7 +11,10 @@ require('cokeline').setup({
     },
     components = {
         {
-            text = function(buffer) return ' ' .. buffer.index .. '.' end,
+            text = '|'
+        },
+        {
+            text = function(buffer) return ' ' .. buffer.index .. ':' end,
         },
         {
             text = function(buffer) return ' ' .. buffer.devicon.icon end,
@@ -19,9 +22,8 @@ require('cokeline').setup({
         },
         {
             text = function(buffer) return buffer.filename .. ' ' end,
-            underline = function(buffer)
-                return buffer.is_hovered and not buffer.is_focused
-            end
+            bold = function(buffer) return buffer.is_focused end,
+            underline = function(buffer) return buffer.is_hovered end,
         },
     },
     sidebar = {
