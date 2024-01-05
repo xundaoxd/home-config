@@ -15,8 +15,6 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node,      opts('CD'))
     vim.keymap.set('n', '<C-[>', api.tree.change_root_to_parent,    opts('UP'))
     vim.keymap.set('n', 's',     api.tree.search_node,              opts('Search'))
-    vim.keymap.set('n', 'f',     api.live_filter.start,             opts('Filter'))
-    vim.keymap.set('n', 'F',     api.live_filter.clear,             opts('Clean Filter'))
 
     vim.keymap.set('n', 'a',     api.fs.create,                     opts('Create'))
     vim.keymap.set('n', 'yy',    api.fs.copy.node,                  opts('Copy'))

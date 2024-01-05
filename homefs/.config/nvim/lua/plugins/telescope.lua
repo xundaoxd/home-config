@@ -15,11 +15,11 @@ telescope.setup({
 })
 telescope.load_extension('fzf')
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', 'ff', builtin.find_files, {})
+vim.keymap.set('n', 'fg', builtin.live_grep, {})
+vim.keymap.set('n', 'fb', builtin.current_buffer_fuzzy_find, {})
 
-vim.keymap.set('n', '<leader>ft', builtin.tags, {})
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
+vim.keymap.set('n', 'ft', builtin.tags, {})
+vim.keymap.set('n', 'fr', builtin.lsp_references, {})
+vim.keymap.set('n', 'fd', builtin.lsp_definitions, {})
 
