@@ -5,14 +5,14 @@ TERMCMD = "alacritty"
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
 key = "Plus"
-mods = "Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "DecreaseFontSize"
 key = "Minus"
-mods = "Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "N"
-mods = "Control"
+mods = "Control|Shift"
