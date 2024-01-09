@@ -17,6 +17,4 @@ vim.o.expandtab = true
 
 vim.o.mouse = 'a'
 vim.o.mousemoveevent = true
-vim.o.foldmethod = 'syntax'
-vim.o.foldenable = false
 
