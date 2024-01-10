@@ -20,5 +20,5 @@ vim.o.mousemoveevent = true
 vim.o.foldmethod = 'indent'
 vim.o.foldenable = false
 
-vim.o.filetype = true
+vim.cmd[[filetype plugin indent on]]
 
