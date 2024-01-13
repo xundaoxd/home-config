@@ -94,7 +94,6 @@ return packer.startup(function(use)
                 requires = {
                     'onsails/lspkind.nvim',
                     'neovim/nvim-lspconfig',
-                    'simrat39/symbols-outline.nvim',
                     'williamboman/mason.nvim',
                 },
             },

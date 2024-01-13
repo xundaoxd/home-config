@@ -116,7 +116,3 @@ local mason_setup = function(cfg)
 end
 vim.api.nvim_create_user_command("MasonInstallAll", function() foreachi(lsp_config, mason_setup) end, {})
 
--- symbols
-require('symbols-outline').setup()
-vim.keymap.set('n', 'sm', '<cmd>SymbolsOutline<CR>')
-
