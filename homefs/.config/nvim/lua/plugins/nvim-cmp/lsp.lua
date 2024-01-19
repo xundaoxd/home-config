@@ -80,30 +80,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
         vim.bo[ev.buf].tagfunc = 'v:lua.vim.lsp.tagfunc'
-
-        -- local opts = { buffer = ev.buf }
-        -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        -- vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help, opts)
-        --
-        -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-        -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        -- vim.keymap.set('n', '<leader>fm', function()
-        --     vim.lsp.buf.format { async = true }
-        -- end, opts)
     end
 })
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help)
-
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
 
 -- mason
 local mason = require('mason')

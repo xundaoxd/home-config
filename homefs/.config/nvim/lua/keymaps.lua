@@ -35,8 +35,8 @@ vim.keymap.set('n', '<leader>yw', 'viw"+y', opts)
 vim.keymap.set('n', '<leader>p', '"+p', opts)
 vim.keymap.set('n', '<leader>P', '"+P', opts)
 
-vim.keymap.set('n', 'dl', 'd$', opts)
-vim.keymap.set('n', 'dh', 'd0', opts)
+vim.keymap.set('n', 'dL', 'd$', opts)
+vim.keymap.set('n', 'dH', 'd0', opts)
 
 -- exit
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', opts)
@@ -49,4 +49,15 @@ vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>', opts)
 vim.keymap.set({'n', 'v', 'i'}, '<down>', '<nop>', opts)
 vim.keymap.set({'n', 'v', 'i'}, '<left>', '<nop>', opts)
 vim.keymap.set({'n', 'v', 'i'}, '<right>', '<nop>', opts)
+
+-- lsp
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help)
+
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
 
