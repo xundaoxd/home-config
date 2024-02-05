@@ -1,7 +1,34 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
 
-telescope.setup()
+telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                ['<CR>'] = actions.select_default,
+                ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
+                ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
+                ['<A-j>'] = actions.preview_scrolling_down,
+                ['<A-k>'] = actions.preview_scrolling_up,
+                ['<A-h>'] = actions.preview_scrolling_left,
+                ['<A-l>'] = actions.preview_scrolling_right,
+            },
+            n = {
+                ['<CR>'] = actions.select_default,
+                ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
+                ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
+                ['<A-j>'] = actions.preview_scrolling_down,
+                ['<A-k>'] = actions.preview_scrolling_up,
+                ['<A-h>'] = actions.preview_scrolling_left,
+                ['<A-l>'] = actions.preview_scrolling_right,
+
+                ['gg'] = actions.move_to_top,
+                ['G'] = actions.move_to_bottom,
+            }
+        }
+    }
+})
 
 vim.keymap.set('n', 'ff', builtin.find_files)
 vim.keymap.set('n', 'fg', builtin.live_grep)
