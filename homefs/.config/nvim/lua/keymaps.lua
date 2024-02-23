@@ -36,10 +36,10 @@ vim.keymap.set('n', 'dL', 'd$')
 vim.keymap.set('n', 'dH', 'd0')
 
 -- exit
-vim.keymap.set({'n', 'v', 'i'}, '<C-s>', '<cmd>w<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<leader>qq', '<cmd>wqa!<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<leader>qa', '<cmd>qa!<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<leader>qw', '<cmd>q!<CR>')
+vim.keymap.set({'n', 'v'}, '<C-s>', '<cmd>w<CR>')
+vim.keymap.set({'n', 'v'}, '<leader>qq', '<cmd>wqa!<CR>')
+vim.keymap.set({'n', 'v'}, '<leader>qa', '<cmd>qa!<CR>')
+vim.keymap.set({'n', 'v'}, '<leader>qw', '<cmd>q!<CR>')
 
 -- misc
 vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>')
