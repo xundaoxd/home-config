@@ -43,15 +43,15 @@ require('cokeline').setup({
 })
 
 for i=1,9,1 do
-    vim.keymap.set({'n', 'v', 'i'}, string.format('<A-%s>', i), string.format('<Plug>(cokeline-focus-%s)', i))
+    vim.keymap.set({'n', 'v'}, string.format('<A-%s>', i), function() mappings.by_index('focus', i) end)
 end
 
-vim.keymap.set({'n', 'v', 'i'}, '<A-h>', '<Plug>(cokeline-focus-prev)')
-vim.keymap.set({'n', 'v', 'i'}, '<A-l>', '<Plug>(cokeline-focus-next)')
+vim.keymap.set({'n', 'v'}, '<A-h>', function() mappings.by_step('focus', -1) end)
+vim.keymap.set({'n', 'v'}, '<A-l>', function() mappings.by_step('focus', 1) end)
 
-vim.keymap.set({'n', 'v', 'i'}, '<A-H>', '<Plug>(cokeline-switch-prev)')
-vim.keymap.set({'n', 'v', 'i'}, '<A-L>', '<Plug>(cokeline-switch-next)')
+vim.keymap.set({'n', 'v'}, '<A-H>', function() mappings.by_step('switch', -1) end)
+vim.keymap.set({'n', 'v'}, '<A-L>', function() mappings.by_step('switch', 1) end)
 
-vim.keymap.set({'n', 'v', 'i'}, '<A-K>', function() mappings.by_step('close', 1) end)
-vim.keymap.set({'n', 'v', 'i'}, '<A-J>', function() mappings.by_step('close', -1) end)
+vim.keymap.set({'n', 'v'}, '<A-K>', function() mappings.by_step('close', 1) end)
+vim.keymap.set({'n', 'v'}, '<A-J>', function() mappings.by_step('close', -1) end)
 
