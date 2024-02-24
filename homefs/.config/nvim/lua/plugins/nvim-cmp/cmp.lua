@@ -12,26 +12,28 @@ cmp.setup({
         documentation = cmp.config.window.bordered()
     },
     mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.jumpable(1) then
-                luasnip.jump(1)
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            else
-                fallback()
-            end
-        end, {'i', 's'}),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {'i', 's'}),
+        -- ['<Tab>'] = cmp.mapping(function(fallback)
+        --     if cmp.visible() then
+        --         cmp.select_next_item()
+        --     elseif luasnip.jumpable(1) then
+        --         luasnip.jump(1)
+        --     elseif luasnip.expandable() then
+        --         luasnip.expand()
+        --     else
+        --         fallback()
+        --     end
+        -- end, {'i', 's'}),
+        -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+        --     if cmp.visible() then
+        --         cmp.select_prev_item()
+        --     elseif luasnip.jumpable(-1) then
+        --         luasnip.jump(-1)
+        --     else
+        --         fallback()
+        --     end
+        -- end, {'i', 's'}),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
         ['<C-k>'] = cmp.mapping.scroll_docs(-4),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
