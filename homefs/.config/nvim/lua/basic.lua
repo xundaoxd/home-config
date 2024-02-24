@@ -10,6 +10,10 @@ vim.o.wrap = false
 vim.o.showcmd = true
 vim.o.scrolloff = 15
 
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smarttab = true
+
 vim.o.mouse = 'a'
 vim.o.mousemoveevent = true
 vim.o.foldmethod = 'indent'
