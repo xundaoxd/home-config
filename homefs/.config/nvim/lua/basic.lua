@@ -8,7 +8,11 @@ vim.o.list = true
 vim.o.listchars = 'tab:>-,trail:-'
 vim.o.wrap = false
 vim.o.showcmd = true
-vim.o.scrolloff = 15
+
+vim.o.scrolloff = 5
+vim.o.scrolljump = 5
+vim.o.sidescroll = 3
+vim.o.sidescrolloff = 3
 
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
