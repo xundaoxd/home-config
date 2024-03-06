@@ -64,6 +64,17 @@ local function foreachi(arr, func)
     end
 end
 
+-- mason
+local mason = require('mason')
+mason.setup({
+    install_root_dir = vim.fn.stdpath('config')..'/pack/mason'
+})
+local mason_setup = function(cfg)
+    local pkgs = cfg.mason
+    require('mason.api.command').MasonInstall(pkgs)
+end
+vim.api.nvim_create_user_command("MasonInstallAll", function() foreachi(lsp_config, mason_setup) end, {})
+
 -- lsp
 local lsp_setup = function(lsp_config)
     local lsp = lsp_config.lsp
@@ -83,20 +94,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- lsp
 vim.keymap.set({'n', 'i'}, '<A-k>', vim.lsp.buf.signature_help)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
-
--- mason
-local mason = require('mason')
-mason.setup({
-    install_root_dir = vim.fn.stdpath('config')..'/pack/mason'
-})
-local mason_setup = function(cfg)
-    local pkgs = cfg.mason
-    require('mason.api.command').MasonInstall(pkgs)
-end
-vim.api.nvim_create_user_command("MasonInstallAll", function() foreachi(lsp_config, mason_setup) end, {})
 

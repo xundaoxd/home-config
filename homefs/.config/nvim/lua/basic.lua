@@ -10,9 +10,7 @@ vim.o.wrap = false
 vim.o.showcmd = true
 
 vim.o.scrolloff = 5
-vim.o.scrolljump = 5
-vim.o.sidescroll = 3
-vim.o.sidescrolloff = 3
+vim.o.sidescrolloff = 5
 
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
