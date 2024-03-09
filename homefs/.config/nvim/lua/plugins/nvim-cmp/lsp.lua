@@ -1,36 +1,25 @@
--- mason
-local mason = require('mason')
-mason.setup({
-    install_root_dir = vim.fn.stdpath('config')..'/pack/mason'
-})
-if vim.fn.empty(vim.fn.glob(vim.fn.stdpath('config')..'/pack/mason/bin')) > 0 then
-    require('mason.api.command').MasonInstall({
-            'clangd', 'cmake-language-server',
-            'pyright',
-            'bash-language-server', 'shellcheck', 'awk-language-server', 
-            'opencl-language-server',
-            'dockerfile-language-server', 'docker-compose-language-service',
-            'typescript-language-server',
-    })
-end
-
--- lsp
-local lspconfig = require('lspconfig')
-for _, lsp in ipairs({
+require('mason').setup()
+require('mason-lspconfig').setup({
+    ensure_installed = {
         'clangd', 'cmake',
-        'pyright',
+        'pyright', 'pylsp',
+        'html', 'tsserver', 'cssls', 'emmet_language_server',
         'bashls', 'awk_ls',
-        'opencl_ls',
         'dockerls', 'docker_compose_language_service',
-        'tsserver',
-    }) do
-    lspconfig[lsp].setup({})
-end
+        'jsonls', 'yamlls',
+    },
+    automatic_installation = true
+})
+require('mason-lspconfig').setup_handlers({
+    function (server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup({})
+    end,
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-        vim.bo[ev.buf].tagfunc = 'v:lua.vim.lsp.tagfunc'
     end
 })
 
