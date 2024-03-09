@@ -34,11 +34,11 @@ cmp.setup({
         --         fallback()
         --     end
         -- end, {'i', 's'}),
+        -- ['<esc>'] = cmp.mapping.abort(),
         ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-j>'] = cmp.mapping.scroll_docs(4),
-        ['<C-e>'] = cmp.mapping.abort(),
+        ['<A-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<A-j>'] = cmp.mapping.scroll_docs(4),
         ['<CR>'] = cmp.mapping.confirm(),
     }),
     formatting = {

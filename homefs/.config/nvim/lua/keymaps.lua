@@ -5,7 +5,7 @@ vim.keymap.set({'n', 'v'}, '<C-k>', '<C-w>k')
 vim.keymap.set({'n', 'v'}, '<C-l>', '<C-w>l')
 
 vim.keymap.set({'n', 'v'}, 'sp', '<C-w>s')
-vim.keymap.set({'n', 'v'}, 'vs', '<C-w>v')
+vim.keymap.set({'n', 'v'}, 'sv', '<C-w>v')
 
 -- move
 vim.keymap.set('i', '<C-h>', '<left>')
