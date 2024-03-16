@@ -35,11 +35,6 @@ vim.keymap.set('n', 'fg', builtin.live_grep)
 vim.keymap.set('n', 'fb', builtin.current_buffer_fuzzy_find)
 vim.keymap.set('n', 'fs', builtin.lsp_workspace_symbols)
 
--- lsp
-vim.keymap.set('n', 'gd', builtin.lsp_definitions)
-vim.keymap.set('n', 'gi', builtin.lsp_implementations)
-vim.keymap.set('n', 'gr', builtin.lsp_references)
-
 require('todo-comments').setup({})
 vim.keymap.set('n', 'ft', '<cmd>TodoTelescope keywords=TODO,FIX,HACK,WARNING<CR>')
 

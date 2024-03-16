@@ -126,6 +126,10 @@ return packer.startup(function(use)
         config = function() require('plugins.telescope') end
     }
     use {
+        'folke/trouble.nvim',
+        config = function() require('plugins.trouble') end
+    }
+    use {
         'easymotion/vim-easymotion',
         config = function() require('plugins.vim-easymotion') end
     }
