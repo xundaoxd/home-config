@@ -104,11 +104,6 @@ return packer.startup(function(use)
 
     -- misc
     use {
-        'folke/todo-comments.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require('plugins.todo-comments') end
-    }
-    use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require('plugins.nvim-tree') end
@@ -123,6 +118,10 @@ return packer.startup(function(use)
         requires = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
+            {
+                'folke/todo-comments.nvim',
+                requires = 'nvim-lua/plenary.nvim',
+            }
         },
         config = function() require('plugins.telescope') end
     }

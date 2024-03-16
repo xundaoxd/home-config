@@ -39,3 +39,7 @@ vim.keymap.set('n', 'fs', builtin.lsp_workspace_symbols)
 vim.keymap.set('n', 'gd', builtin.lsp_definitions)
 vim.keymap.set('n', 'gi', builtin.lsp_implementations)
 vim.keymap.set('n', 'gr', builtin.lsp_references)
+
+require('todo-comments').setup({})
+vim.keymap.set('n', 'ft', '<cmd>TodoTelescope keywords=TODO,FIX,HACK,WARNING<CR>')
+
