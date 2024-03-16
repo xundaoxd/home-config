@@ -2,6 +2,7 @@ local trouble = require('trouble')
 
 trouble.setup({
     action_keys = {
+        close = 'qq',
         refresh = 'r',
         jump_close = '<CR>',
         next = '<TAB>',
