@@ -37,9 +37,9 @@ vim.keymap.set('n', 'dH', 'd0')
 
 -- exit
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
-vim.keymap.set('n', 'qq', '<cmd>wqa!<CR>')
-vim.keymap.set('n', 'qa', '<cmd>qa!<CR>')
-vim.keymap.set('n', 'qw', '<cmd>q!<CR>')
+vim.keymap.set('n', '<leader>qq', '<cmd>wqa!<CR>')
+vim.keymap.set('n', '<leader>qa', '<cmd>qa!<CR>')
+vim.keymap.set('n', '<leader>qw', '<cmd>q!<CR>')
 
 -- misc
 vim.keymap.set({'n', 'v', 'i'}, '<up>', '<nop>')
