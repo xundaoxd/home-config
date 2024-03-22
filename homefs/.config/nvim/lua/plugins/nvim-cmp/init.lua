@@ -53,7 +53,6 @@ cmp.setup({
         { name = 'path' },
         { name = 'buffer' },
         { name = 'emoji' },
-        { name = 'calc' },
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
     }),
