@@ -55,12 +55,15 @@ cmp.setup({
         })
     },
     sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'emoji' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'emoji' },
-        { name = 'luasnip' },
-        { name = 'nvim_lsp' },
     }),
+    sorting = {
+        comparators = {cmp.config.compare.offset}
+    },
 })
 
 cmp.setup.cmdline('/', {
