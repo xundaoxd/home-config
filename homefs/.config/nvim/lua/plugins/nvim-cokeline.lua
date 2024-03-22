@@ -52,6 +52,6 @@ vim.keymap.set({'n', 'v'}, '<A-l>', function() mappings.by_step('focus', 1) end)
 vim.keymap.set({'n', 'v'}, '<A-H>', function() mappings.by_step('switch', -1) end)
 vim.keymap.set({'n', 'v'}, '<A-L>', function() mappings.by_step('switch', 1) end)
 
-vim.keymap.set({'n', 'v'}, '<A-K>', function() mappings.by_step('close', 1) end)
 vim.keymap.set({'n', 'v'}, '<A-J>', function() mappings.by_step('close', -1) end)
+vim.keymap.set({'n', 'v'}, '<A-K>', function() mappings.by_step('close', 1) end)
 
