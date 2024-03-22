@@ -48,11 +48,17 @@ cmp.setup({
     }),
     formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = require('lspkind').cmp_format({
-            mode = 'symbol_text',
-            maxwidth = 50,
-            ellipsis_char = '...',
-        })
+        format = function(entry, vim_item)
+            vim_item.kind = string.format('%s', vim_item.kind)
+            vim_item.menu = ({
+                    nvim_lsp = "[LSP]",
+                    luasnip = "[LuaSnip]",
+                    emoji = "[Emoji]",
+                    path = "[Path]",
+                    buffer = "[Buffer]",
+                })[entry.source.name]
+            return vim_item
+        end,
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

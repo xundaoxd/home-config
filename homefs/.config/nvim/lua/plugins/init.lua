@@ -91,7 +91,6 @@ return packer.startup(function(use)
             {
                 'hrsh7th/cmp-nvim-lsp',
                 requires = {
-                    'onsails/lspkind.nvim',
                     'neovim/nvim-lspconfig',
                     'williamboman/mason.nvim',
                     'williamboman/mason-lspconfig.nvim',
