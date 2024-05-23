@@ -1991,3 +1991,14 @@ class paste_ext(Command):
 
     def execute(self):
         return self.fm.paste(make_safe_path=paste_ext.make_safe_path)
+
+
+class scp(Command):
+    def execute(self):
+        opts = self.rest(1)
+        if opts:
+            scpcmd = ["scp", "-r"]
+            scpcmd.extend([f.realpath for f in self.fm.thistab.get_selection()])
+            scpcmd.extend(opts.split())
+            self.fm.execute_command(scpcmd)
+            self.fm.notify("Uploaded!")
