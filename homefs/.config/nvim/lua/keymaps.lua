@@ -31,7 +31,8 @@ vim.keymap.set('n', 'vs', '<C-w>v')
 
 -- exit
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
-vim.keymap.set('n', '<C-w>', '<cmd>q!<CR>')
+vim.keymap.set('n', '<leader>qq', '<cmd>q<CR>')
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<CR>')
 
 -- misc
 vim.keymap.set({ 'n', 'v', 'i' }, '<up>', '<nop>')
