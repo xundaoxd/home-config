@@ -13,9 +13,8 @@ vim.keymap.set({ 'n', 'v' }, 'E', 'ge')
 
 -- copy, cut, delete
 vim.keymap.set('v', '<C-x>', '"+x')
-vim.keymap.set('v', '<C-d>', '"+d')
-vim.keymap.set('v', '<C-y>', '"+y')
-vim.keymap.set('n', '<C-p>', '"+p')
+vim.keymap.set('v', '<C-c>', '"+y')
+vim.keymap.set('n', '<C-v>', '"+p')
 
 vim.keymap.set('n', 'dL', 'd$')
 vim.keymap.set('n', 'dH', 'd0')
