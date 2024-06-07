@@ -12,7 +12,7 @@ end
 local packer_bootstrap = ensure_packer()
 local packer = require('packer')
 packer.init({
-    package_root = vim.fn.stdpath('config')..'/pack',
+    package_root = vim.fn.stdpath('cache')..'/pack',
     display = {
         open_fn = function()
             return require('packer.util').float()
@@ -127,10 +127,6 @@ return packer.startup(function(use)
     use {
         'easymotion/vim-easymotion',
         config = function() require('plugins.vim-easymotion') end
-    }
-    use {
-        'akinsho/toggleterm.nvim',
-        config = function() require('plugins.toggleterm') end
     }
     if packer_bootstrap then
         packer.sync()
