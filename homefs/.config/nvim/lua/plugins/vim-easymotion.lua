@@ -1,5 +1,9 @@
-vim.g.EasyMotion_do_mapping = 0
+return {
+    'easymotion/vim-easymotion',
+    init = function()
+        vim.g.EasyMotion_do_mapping = 0
 
-vim.keymap.set('n', 'ss', '<Plug>(easymotion-f2)')
-vim.keymap.set('n', 'SS', '<Plug>(easymotion-bd-f2)')
-
+        vim.keymap.set('n', 'ss', '<Plug>(easymotion-f2)')
+        vim.keymap.set('n', 'SS', '<Plug>(easymotion-bd-f2)')
+    end,
+}
