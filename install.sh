@@ -15,7 +15,6 @@ init() {
     [[ $opt_force == y ]] && rm -rf ~/.zshrc ~/.zprofile
     [[ -e ~/.zshrc ]] && return
 
-    cp $self_dir/homefs/.xprofile ~/.xprofile
     cp -r $self_dir/homefs/Pictures ~/
 
     cp $self_dir/homefs/.zshrc ~/.zshrc
