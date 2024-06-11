@@ -46,19 +46,6 @@ local mason_init = function()
             })
         end,
     })
-
-    -- trouble
-    local trouble = require('trouble')
-
-    trouble.setup({
-        action_keys = {
-            cancel = '<esc>',
-            refresh = 'r',
-            jump_close = { '<CR>' },
-            next = '<TAB>',
-            previous = '<S-TAB>',
-        }
-    })
 end
 
 local cmp_init = function()
@@ -104,8 +91,8 @@ local cmp_init = function()
             end, { 'i', 's' }),
             -- ['<Tab>'] = cmp.mapping.select_next_item(),
             -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-            ['<A-k>'] = cmp.mapping.scroll_docs(-4),
-            ['<A-j>'] = cmp.mapping.scroll_docs(4),
+            ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+            ['<C-j>'] = cmp.mapping.scroll_docs(4),
             ['<CR>'] = cmp.mapping.confirm(),
         }),
         formatting = {
@@ -170,12 +157,23 @@ return {
     config = function()
         mason_init()
         cmp_init()
-    end,
-    init = function()
+
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
         vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
 
+        -- trouble
+        local trouble = require('trouble')
+
+        trouble.setup({
+            action_keys = {
+                cancel = '<esc>',
+                refresh = 'r',
+                jump_close = { '<CR>' },
+                next = '<TAB>',
+                previous = '<S-TAB>',
+            }
+        })
         vim.keymap.set('n', 'gd', function() trouble.toggle('lsp_definitions') end)
         vim.keymap.set('n', 'gr', function() trouble.toggle('lsp_references') end)
     end,

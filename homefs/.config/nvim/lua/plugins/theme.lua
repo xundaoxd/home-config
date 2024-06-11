@@ -1,7 +1,7 @@
 return {
     'morhetz/gruvbox',
     event = 'VimEnter',
-    init = function()
+    config = function()
         vim.cmd([[colorscheme gruvbox]])
     end,
 }

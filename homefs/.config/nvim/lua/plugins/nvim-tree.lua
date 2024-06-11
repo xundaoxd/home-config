@@ -49,10 +49,12 @@ return {
             vim.keymap.set('n', 'R', api.tree.reload, opts('Refresh'))
         end,
     },
+    keys = {
+        { '<leader>dr', '<cmd>NvimTreeToggle<cr>' }
+    },
     init = function()
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
         vim.opt.termguicolors = true
-        vim.keymap.set('n', '<leader>dr', '<cmd>NvimTreeToggle<cr>')
     end,
 }

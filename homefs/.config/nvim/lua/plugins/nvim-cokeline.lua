@@ -50,8 +50,6 @@ return {
                 }
             }
         })
-    end,
-    init = function()
         local mappings = require('cokeline.mappings')
         for i = 1, 9, 1 do
             vim.keymap.set({ 'n', 'v' }, string.format('<A-%s>', i), function() mappings.by_index('focus', i) end)

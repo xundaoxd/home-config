@@ -39,12 +39,13 @@ return {
         })
         require('todo-comments').setup({})
     end,
-    init = function()
-        vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-        vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-        vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
-        vim.keymap.set('n', '<leader>fs', '<cmd>Telescope help_tags<cr>')
+    keys = {
+        { '<leader>dh', '<cmd>DiffviewFileHistory<cr>' },
+        { '<leader>ff', '<cmd>Telescope find_files<cr>' },
+        { '<leader>fg', '<cmd>Telescope live_grep<cr>' },
+        { '<leader>fb', '<cmd>Telescope buffers<cr>' },
+        { '<leader>fs', '<cmd>Telescope help_tags<cr>' },
 
-        vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope keywords=TODO,FIX,HACK,WARNING<CR>')
-    end,
+        { '<leader>ft', '<cmd>TodoTelescope keywords=TODO,FIX,HACK,WARNING<CR>' },
+    },
 }

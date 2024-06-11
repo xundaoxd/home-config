@@ -11,9 +11,9 @@ return {
             }
         }
     },
-    init = function()
-        vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<cr>')
-        vim.keymap.set('n', '<leader>dc', '<cmd>DiffviewClose<cr>')
-        vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory<cr>')
-    end,
+    keys = {
+        { '<leader>do', '<cmd>DiffviewOpen<cr>' },
+        { '<leader>dc', '<cmd>DiffviewClose<cr>' },
+        { '<leader>dh', '<cmd>DiffviewFileHistory<cr>' },
+    },
 }
