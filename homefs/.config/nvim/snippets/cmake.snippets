@@ -13,3 +13,9 @@ snippet cmake
     set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
     include(GNUInstallDirs)
+
+snippet cpm
+    set(CPM_SOURCE_CACHE "\$ENV{HOME}/.cache/CPM")
+    include(CPM)
+    CPMAddPackage("gh:fmtlib/fmt#7.1.3")
+
