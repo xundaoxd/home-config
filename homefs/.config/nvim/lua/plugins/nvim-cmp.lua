@@ -152,7 +152,6 @@ return {
         'neovim/nvim-lspconfig',
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        'folke/trouble.nvim',
     },
     config = function()
         mason_init()
@@ -161,20 +160,5 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
         vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
-
-        -- trouble
-        local trouble = require('trouble')
-
-        trouble.setup({
-            action_keys = {
-                cancel = '<esc>',
-                refresh = 'r',
-                jump_close = { '<CR>' },
-                next = '<TAB>',
-                previous = '<S-TAB>',
-            }
-        })
-        vim.keymap.set('n', 'gd', function() trouble.toggle('lsp_definitions') end)
-        vim.keymap.set('n', 'gr', function() trouble.toggle('lsp_references') end)
     end,
 }
