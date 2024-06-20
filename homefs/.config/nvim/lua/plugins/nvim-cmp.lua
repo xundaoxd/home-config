@@ -166,5 +166,8 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
         vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
+
+        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
+        vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation)
     end,
 }
