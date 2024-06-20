@@ -39,6 +39,7 @@ return {
         })
         require('todo-comments').setup({})
     end,
+    lazy = true,
     keys = {
         { '<leader>dh', '<cmd>DiffviewFileHistory<cr>' },
         { '<leader>ff', '<cmd>Telescope find_files<cr>' },

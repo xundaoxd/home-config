@@ -11,6 +11,7 @@ return {
             }
         }
     },
+    lazy = true,
     keys = {
         { '<leader>do', '<cmd>DiffviewOpen<cr>' },
         { '<leader>dc', '<cmd>DiffviewClose<cr>' },

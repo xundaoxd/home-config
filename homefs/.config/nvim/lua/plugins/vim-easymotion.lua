@@ -1,5 +1,6 @@
 return {
     'easymotion/vim-easymotion',
+    lazy = true,
     keys = {
         { 'ss', '<Plug>(easymotion-f2)' },
         { 'SS', '<Plug>(easymotion-bd-f2)' },
