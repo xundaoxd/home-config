@@ -3,7 +3,7 @@ Print
     flameshot screen -p ~/Pictures
 
 shift + Print
-    flameshot gui -p ~/Pictures
+    flameshot gui
 
 # wm independent hotkeys ------------------------------------------------
 super + ctrl + q
