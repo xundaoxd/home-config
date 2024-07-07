@@ -23,7 +23,7 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -show combi -modes combi -combi-modes "window,drun,run"
+    rofi -show drun
 
 # close and kill
 super + {_,shift + }w
