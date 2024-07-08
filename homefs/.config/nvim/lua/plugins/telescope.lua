@@ -37,11 +37,16 @@ return {
                 }
             }
         })
-        vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory<cr>')
-        vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-        vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-        vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
-        vim.keymap.set('n', '<leader>fs', '<cmd>Telescope help_tags<cr>')
+        local builtin = require('telescope.builtin')
+
+        vim.keymap.set('n', '<leader>ff', builtin.find_files)
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+        vim.keymap.set('n', '<leader>fb', builtin.buffers)
+        vim.keymap.set('n', '<leader>fs', builtin.help_tags)
+
+        vim.keymap.set('n', '<leader>gr', builtin.lsp_references)
+        vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions)
+        vim.keymap.set('n', '<leader>gD', builtin.lsp_implementations)
 
         require('todo-comments').setup({})
         vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope keywords=TODO,FIX,HACK,WARNING<CR>')
