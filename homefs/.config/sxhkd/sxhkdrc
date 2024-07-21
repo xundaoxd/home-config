@@ -1,11 +1,10 @@
-# misc hotkeys ----------------------------------------------------------
+# wm independent hotkeys ------------------------------------------------
 Print
     flameshot screen -p ~/Pictures
 
 shift + Print
     flameshot gui
 
-# wm independent hotkeys ------------------------------------------------
 super + ctrl + q
     loginctl lock-session
 
@@ -29,13 +28,9 @@ super + @space
 super + {_,shift + }w
     bspc node -{c,k}
 
-# window state/flags ----------------------------------------------------
+# window state ----------------------------------------------------------
 super + {t,shift + t,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-super + ctrl + {m,x,y,z}
-    bspc node -g {marked,locked,sticky,private}
 
 # alternate between the tiled and monocle layout
 super + m
@@ -79,7 +74,11 @@ super + alt + {Left,Down,Up,Right}
 super + alt + shift + {Left,Down,Up,Right}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# preselect -------------------------------------------------------------
+# misc ------------------------------------------------------------------
+# set the node flags
+super + ctrl + {m,x,y,z}
+    bspc node -g {marked,locked,sticky,private}
+
 # cancel the preselection for the focused node
 super + ctrl + space
     bspc node -p cancel
