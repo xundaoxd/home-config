@@ -14,8 +14,6 @@ snippet cmake
     set(CMAKE_POSITION_INDEPENDENT_CODE True)
     include_directories("\${CMAKE_CURRENT_SOURCE_DIR}/include;\${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-    include(GNUInstallDirs)
-
 snippet cpm
     # curl --create-dirs -o cmake/CPM.cmake -fsSL https://github.com/cpm-cmake/CPM.cmake/releases/latest/download/get_cpm.cmake
     set(CPM_SOURCE_CACHE "\$ENV{HOME}/.cache/CPM" CACHE STRING "cpm cache directory")
