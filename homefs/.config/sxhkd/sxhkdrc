@@ -1,20 +1,11 @@
 # wm independent hotkeys ------------------------------------------------
-Print
-    flameshot screen -p ~/Pictures
-
-shift + Print
-    flameshot gui
-
-super + ctrl + q
-    loginctl lock-session
+# quit/restart bspwm
+super + ctrl + {q,r}
+    bspc {quit,wm -r}
 
 # sxhkd reload configuration
 super + Escape
     pkill -USR1 -x sxhkd
-
-# quit/restart bspwm
-super + alt + {q,r}
-    bspc {quit,wm -r}
 
 # terminal emulator
 super + Return
@@ -36,7 +27,6 @@ super + {t,shift + t,s,f}
 super + m
     bspc desktop -l next
 
-# focus/send ------------------------------------------------------------
 # focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
@@ -67,11 +57,11 @@ super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # expand a window by moving one of its side outward
-super + alt + {Left,Down,Up,Right}
+super + shift + {Left,Down,Up,Right}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {Left,Down,Up,Right}
+super + ctrl + shift + {Left,Down,Up,Right}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # misc ------------------------------------------------------------------
@@ -90,4 +80,13 @@ super + ctrl + {h,j,k,l}
 # preselect the ratio
 super + ctrl + {1-9}
     bspc node -o 0.{1-9}
+
+Print
+    flameshot screen -p ~/Pictures
+
+shift + Print
+    flameshot gui
+
+super + ctrl + q
+    loginctl lock-session
 
