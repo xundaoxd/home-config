@@ -1,7 +1,10 @@
 # wm independent hotkeys ------------------------------------------------
 # quit/restart bspwm
-super + ctrl + {q,r}
-    bspc {quit,wm -r}
+super + ctrl + r
+    bspc wm -r
+
+super + ctrl + q
+    loginctl lock-session
 
 # sxhkd reload configuration
 super + Escape
@@ -86,7 +89,4 @@ Print
 
 shift + Print
     flameshot gui
-
-super + ctrl + q
-    loginctl lock-session
 
