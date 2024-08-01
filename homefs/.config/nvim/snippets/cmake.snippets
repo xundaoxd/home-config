@@ -12,7 +12,11 @@ snippet cmake
     set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
     set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
     set(CMAKE_POSITION_INDEPENDENT_CODE True)
-    include_directories("\${CMAKE_CURRENT_SOURCE_DIR}/include;\${CMAKE_CURRENT_SOURCE_DIR}/src")
+    include_directories(
+        \${CMAKE_CURRENT_SOURCE_DIR}/include
+        \${CMAKE_CURRENT_SOURCE_DIR}/src
+        \${CMAKE_CURRENT_BINARY_DIR}/src
+    )
 
 snippet cpm
     # curl --create-dirs -o cmake/CPM.cmake -fsSL https://github.com/cpm-cmake/CPM.cmake/releases/latest/download/get_cpm.cmake
