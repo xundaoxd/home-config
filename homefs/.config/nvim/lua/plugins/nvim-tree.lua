@@ -46,7 +46,10 @@ return {
                 vim.keymap.set('n', 'yn', api.fs.copy.filename, opts('Copy filename'))
 
                 vim.keymap.set('n', 'i', api.tree.toggle_gitignore_filter, opts('Toggle Git Ignore'))
-                vim.keymap.set('n', '/', api.tree.search_node, opts('Search'))
+                vim.keymap.set('n', '/', function()
+                    api.live_filter.clear()
+                    api.live_filter.start()
+                end, opts('Search'))
                 vim.keymap.set('n', 'R', api.tree.reload, opts('Refresh'))
             end,
 
